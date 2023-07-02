@@ -1,0 +1,128 @@
+.flex-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .row {
+    flex-direction: row;
+  }
+  
+  .column {
+    flex-direction: column;
+  }
+  
+  .footer {
+    @extend .flex-container, .column;
+    justify-content: center;
+    margin: 0 1rem;
+  
+    &__logo {
+      margin: 3rem;
+      width: 20%;
+      
+      &:hover {
+        width: 35%;
+        filter: brightness(0) contrast(100%)invert(77%) sepia(48%) saturate(711%) hue-rotate(354deg) brightness(104%) contrast(87%);
+      }
+    }
+  
+    &__contact, &__owner {
+      flex-grow: 1;
+      flex-basis: 0;
+    }
+  
+    &__contact img, .footer__social img {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin: 0 0.25rem;
+  
+      &:hover {
+        filter: brightness(0) contrast(100%)invert(77%) sepia(48%) saturate(711%) hue-rotate(354deg) brightness(104%) contrast(87%);
+      }
+    }
+  
+    &__owner a:hover, .footer__contact p:hover {
+      opacity: 0.5;
+    }
+  
+    &__social {
+      @extend .flex-container, .row;
+      justify-content: space-between;
+      width: 100%;
+    }
+  
+    &__contact__item__element {
+      margin: 1rem;
+    }
+  
+    & ul li .nav-link-item__footer {
+      color: colors.$white;
+      font-family: fonts.$h;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin: 1rem;
+  
+      &:hover {
+        color: colors.$yellow;
+      }
+    }
+  }
+  
+  .contact-link__footer, .nav-link__footer, .footer-coords {
+    @extend .flex-container, .row;
+  }
+  
+  .contact-link__footer, .footer-coords {
+    justify-content: space-between;
+  }
+  
+  .phone-number__text:before {
+    content: "+x (xxx) xxx xxxx";
+  }
+  
+  .phone-number:hover .phone-number__text:before {
+    content: "+1 (581) 985 0167";
+  }
+  
+  .email__text:before {
+    content: "Nous contacter";
+  }
+  
+  .email:hover .email__text:before {
+    content: "info@anthonylemay.com";
+  }
+  
+  .nav-link__footer {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 1100px) {
+    .nav-link__footer {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    footer ul li {
+      margin: 1rem 0;
+    }
+    .footer__logo {
+      width: 30%;
+    }
+  }
+  
+  @media screen and (max-width: 995px) {
+    .footer-coords {
+      flex-direction: column;
+    }
+    .footer__owner {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .contact-link__footer {
+      justify-content: space-around;
+    }
+  }
+  

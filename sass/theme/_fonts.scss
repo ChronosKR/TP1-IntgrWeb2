@@ -1,0 +1,43 @@
+$h: "dunbar-tall", sans-serif;
+$sub: "alfarn", sans-serif;
+$tonic: "paroli", sans-serif;
+$p: "new-order", sans-serif;
+$netflix: "bebas-neue", sans-serif;
+
+$font-size: 1.5rem;
+$font-size--max: 1.75rem;
+$font-size--min: 1rem;
+$font-size--increment: 0.25rem;
+
+$regular: 400;
+$bold: 700;
+$ultra: 900;
+
+%h{
+    font-family: $h;
+    font-weight: $ultra;
+}
+
+
+
+@for $i from 1 through 4 {
+  $font-size: $font-size--max - ($i - 1) * $font-size--increment;
+  h#{$i} {
+    font-size: $font-size;
+    @extend %h;
+  }
+}
+
+
+p{
+    font-family: $p;
+    font-size: 1rem;
+    font-weight: $regular;
+}
+
+.p--bold{
+    font-weight: $bold;
+}
+
+
+//next step: penser à des mixin pour des cards, ou mon background. Pour mon formulaire aussi quand je vais validate si les input sont good.

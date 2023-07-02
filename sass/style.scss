@@ -1,0 +1,102 @@
+/* Partials Links */
+@use 'theme/colors';
+@use 'theme/fonts';
+@use 'theme/fx';
+@use 'theme/mixins';
+@use 'carousel';
+@use 'people';
+@use 'newsletter';
+@use 'features';
+@use 'gallery';
+@use 'chart';
+@use 'header';
+@use 'mapform';
+@use 'footer';
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.wavy-bg__img{
+  background-image: url(../../img/wavy.svg);
+  background-position: center;
+  background-repeat:repeat;
+  background-size: cover;
+  width:100%;
+  height:100%;
+  position:relative;
+  bottom:0;
+}
+
+
+body{
+    background-color:colors.$white;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:focus, button:focus, input:focus, textarea:focus, img:focus, li:focus{
+  outline-color:colors.$white;
+  outline-width: 1rem;
+  border: 2rem solid colors.$sky;
+  opacity: 0.9;
+} 
+
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+  }
+  
+ 
+
+  .btn{
+    padding: 0.25rem 1rem 0.6rem 1rem;
+    margin: 0 1rem;
+    font-family: fonts.$tonic;
+    font-size: fonts.$font-size--max;
+    color: colors.$white;
+    background-color: colors.$black;
+    border: 0 solid;
+    border-radius:0.25rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    &:hover{
+      color: colors.$pure-black;
+      background-color: colors.$white;
+    }
+}
+
+.confirm-img{
+  margin:6rem 0 6rem 0;
+  min-width:30%;
+  max-width:50%;
+}
+
+.netflix{
+  color: colors.$red;
+  font-family: fonts.$netflix;
+}

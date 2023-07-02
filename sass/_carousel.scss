@@ -1,0 +1,173 @@
+@use './theme/colors';
+@use './theme/fonts';
+@use './theme/fx';
+@use './theme/mixins';
+
+.carousel {
+	position: relative;
+	overflow: hidden;
+    text-align: center;
+	> s:target ~ .slide__arrows >* {
+		opacity: hidden;
+	} //cache tous les arrows non en vigueur
+}
+
+.slide { //fiche active
+	margin: 6rem 0 0 0;
+	height: 100%;
+	white-space: nowrap;
+	font-size:0;
+	transition: transform 1s ease-out;
+	-webkit-transition: -webkit-transform 1s ease-out;
+	& img{
+		border-radius:10px;
+	}
+	& > * { // attributs des fiches + animation
+		overflow:hidden;
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		opacity:0;
+		transition: opacity .75s ease-out;
+	}
+	& > *.slide--default { // rend l'image assignée à l'image par défault visible
+		opacity: 1;
+	}
+	&__arrows {
+		position: absolute;
+		top: 45%;
+		width: 100%;
+		> div+div {
+			visibility: hidden;
+		}
+		& a { //flèche de gauche
+			border: .4rem solid colors.$pure-black;
+			border-top: 0;
+			border-right:0;
+			position: absolute;
+			width:       1rem;
+			height:      1rem;
+			text-align: center;
+			margin: .5rem;
+			-webkit-transition: 0.3s;
+							transition: 0.3s;
+			-webkit-transform: translateY(-50%);
+							transform: translateY(-50%);
+			left: 0.5rem;
+			transform: rotate(45deg);
+			-webkit-transform: rotate(45deg);
+			opacity: 1;
+			&:hover {
+				border-color: colors.$yellow;
+			}
+		}
+		& a+a { //sélection et position de la flèche de droite
+			left: auto;
+			right: 0.5rem;
+			transform: rotate(-135deg);
+			-webkit-transform: rotate(-135deg);
+		}	
+	}
+	&__bullets {
+		z-index: 2;
+		margin: 1rem 0 6rem 0;
+		padding: .5rem 0;
+		width: 100%;
+		bottom: 0;
+		text-align: center;
+	  
+		& > a {
+			display: inline-block;
+			padding: .35rem;
+			border-radius: 50%;
+			border: .2rem solid colors.$pure-black;
+			background-color: colors.$bg-color;
+			-webkit-transition: 0.3s;
+			transition: 0.3s;
+		  
+			&.slide__bullets--default {
+			  background: colors.$pure-black;
+			}
+
+			&:hover {
+				background: colors.$pure-black !important;
+			}
+	
+			&:target {
+				background: colors.$pure-black;
+			}
+		}		  
+	}
+}
+
+//Expérimentation - Fonctionnement du carousel 
+@for $i from 1 through 4 { //affiche les bouttons de flèches actives de l'image correspondante de chaque côté
+	#slide-#{$i}:target ~ .slide >*:nth-child(#{$i}) {
+	  opacity: 1;
+	}
+}
+
+@for $i from 1 through 4 {  //affiche le point actif de l'image correspondante dans le bas du carousel
+#slide-#{$i}:target ~ .slide >*:nth-child(#{$i}) {
+	opacity: 1;
+}
+#slide-#{$i}:target ~ .slide__bullets > a:nth-child(#{$i}) {
+	background: colors.$pure-black;
+}
+#slide-#{$i}:target ~ .slide__bullets > a:not(:nth-child(#{$i})),
+#slide-#{$i}:target ~ .slide__bullets > a.slide__bullets--default:not(:nth-child(#{$i})) {
+	background-color: colors.$bg-color;
+}
+}
+
+@for $i from 2 through 4 { //cache les points non-actif par défault avec la couleur de fond.
+	#slide-#{$i}:target ~ .slide__bullets > .bullet--default {
+	  background-color: colors.$white;
+	}
+  }
+   
+@for $i from 1 through 4 {	//rend l'image "target" visible
+	#slide-#{$i}:target ~ .slide__arrows >*:nth-child(#{$i}) {
+	  visibility: visible;
+	}
+  }
+  
+@for $i from 1 through 4 { //permet le défilement de l'image en changeant la position
+	$translateXValue: ($i - 1) * -100%;
+	#slide-#{$i}:target ~ .slide {
+	  transform: translateX(#{$translateXValue});
+	  -webkit-transform: translateX(#{$translateXValue});
+	}
+  }
+
+
+@media screen and (max-width: 1100px){
+
+    .slide img{
+	width:80%;
+}
+
+}
+
+@media screen and (max-width: 960px){
+	.slide__bullets > a {
+	padding: .5rem;
+	margin: 1rem;
+}
+}
+
+
+@media screen and (max-width: 800px){
+
+    .slide img{
+	width:70%;
+	height:20rem;
+	object-fit:cover;
+	object-position:0;
+}
+	.slide__bullets > a {
+		padding: .75rem;
+
+}
+
+}

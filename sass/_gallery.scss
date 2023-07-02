@@ -1,0 +1,128 @@
+@use './theme/colors';
+@use './theme/fonts';
+@use './theme/fx';
+@use './theme/mixins';
+
+.gallery {
+    @include mixins.flexColumn;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+        margin: 3rem;
+        color: colors.$white;
+        font-size: fonts.$font-size--max;
+        filter: drop-shadow(3px 3px rgb(0 0 0));
+        position: relative;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        width: 100%;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    &__bg {
+        background-image: url(../../img/bg.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        bottom: 0;
+        padding-top: 3rem;
+        padding-bottom: 6rem;
+    }
+
+    &__img img {
+        width: 100%;
+        height: 100%;
+        border-radius: 0.5rem;
+        object-fit: cover;
+    }
+
+    &__img--pos1 {
+        grid-column: 1 / span 3;
+        grid-row: 2 / span 3;
+    }
+
+    &__img--pos2 {
+        grid-column: 4 / span 5;
+        grid-row: 1 / span 3;
+    }
+
+    &__img--pos3 {
+        grid-column: 9 / span 2;
+        grid-row: 2 / span 2;
+    }
+
+    &__img--pos4 {
+        grid-column: 11 / span 2;
+        grid-row: 3 / span 3;
+    }
+
+    &__img--pos5 {
+        grid-column: 4 / span 2;
+        grid-row: 4 / span 2;
+    }
+
+    &__img--pos6 {
+        grid-column: 6 / span 5;
+        grid-row: 4 / span 3;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .gallery{
+        &__grid {
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 1rem;
+            width: 90%;
+        }
+        &__img {
+            grid-column: auto / span 1;
+            grid-row: auto / span 1;
+
+            &--pos1,
+            &--pos3,
+            &--pos5,
+            &--pos6 {
+                grid-row: auto / span 1;
+            }
+
+            &--pos2,
+            &--pos4 {
+                grid-row: auto / span 2;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .gallery{
+        &__grid {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+            gap: 1rem;
+            width: 70%;
+        } 
+        &__img {
+            grid-column: 1;
+            grid-row: 1;
+            &--pos1,
+            &--pos3,
+            &--pos5 {
+                grid-row: auto / span 1;
+            }
+    
+            &--pos2,
+            &--pos6,
+            &--pos4 {
+                grid-row: auto / span 1;
+            }
+        }
+    }
+}

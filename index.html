@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explorez le monde charmant et exigeant de Cuphead, un jeu d'action en 2D dessiné à la main inspiré des dessins animés des années 1930.">
+    <title>Le jeu Cuphead</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./style/css/style.css">
+    <link rel="stylesheet" href="./style/css/normalize.css">
+    <link rel="stylesheet" href="https://use.typekit.net/rgr6nmb.css">
+    <script src="./js/script.js" defer></script>
+</head>
+
+<body>
+<a class="screen-reader-text" href="#content" tabindex="1">Aller au contenu principal</a>
+<header class="header">
+    <nav id="menu" class="header__menu container">
+        <div class="nav__logo nav__logo--shadow">
+            <h1><a id="logo" href="index.html"><img src="./img/logo.svg" alt="logo du jeu Cuphead"></a></h1>
+        </div>
+        <div class="nav" role="navigation" aria-label="Menu des pages du site web">
+            <a id="logo-burger" class="nav__logo--burger" href="index.html"><img src="./img/logo.svg" alt="logo du jeu Cuphead"></a>
+            <ul class="nav__list" role=tablist>
+                <li class="nav__item nav--active" role="tab">
+                    <a href="index.html" class="" id="accueil-tab" role="tab" aria-selected="true">
+                        <img src="img/nav-1.svg" alt="Icône personnage Cuphead">Accueil
+                    </a>
+                    <a id="arrow__accueil" href="index.html" role="tab">
+                        <img class="list__item__arrow" src="img/arrow-down.svg" alt="Afficher le sous-menu pour Accueil">
+                    </a>
+                </li>
+                <li class="nav__item" role="tab">
+                    <a href="index.html" class="nav__link" id="a-propos" role="tab" aria-selected="false">
+                        <img src="img/nav-2.svg" alt="Icône personnage Mugman">À propos
+                    </a>
+                    <a id="arrow__apropos" href="index.html">
+                        <img class="list__item__arrow" src="img/arrow-down.svg" alt="Afficher le sous-menu pour À propos">
+                    </a>
+                </li>
+                <li class="nav__item" role="tab">
+                    <a href="index.html" class="nav__link" id="dlc" role="tab" aria-selected="false">
+                        <img src="img/nav-3.svg" alt="Icône personnage Ms. Chalice">DLC
+                    </a>
+                    <a id="arrow__dlc" href="index.html">
+                        <img class="list__item__arrow" src="img/arrow-down.svg" alt="Afficher le sous-menu pour DLC">
+                    </a>
+                </li>
+                <li class="nav__item" role="tab">
+                    <a href="index.html" class="nav__link" id="studio-MDHR" role="tab" aria-selected="false">
+                        <img src="img/nav-4.svg" alt="Icône personnage Diable">Studio MDHR
+                    </a>
+                    <a id="arrow__studio-mdhr" href="index.html">
+                        <img class="list__item__arrow" src="img/arrow-down.svg" alt="Afficher le sous-menu pour Studio MDHR">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="burger" tabindex="1" class="nav__burger" role="button" aria-label="Menu toggle button">
+            <span class="nav__burger__bar"></span>
+            <span class="nav__burger__bar"></span>
+            <span class="nav__burger__bar"></span>
+        </div>
+    </nav>
+</header>        
+
+<main id="content">
+    <section>
+        <h2 class="screen-reader-text">Section carousel d'images promotionnelles du site.</h2>
+        <div id="carousel" class="carousel container">
+            <s id="slide-1"></s> 
+            <s id="slide-2"></s>
+            <s id="slide-3"></s>
+            <s id="slide-4"></s>
+
+            <div class="slide"> <!--La clée "tab" vient sélectionner ces images, même si elles ne sont pas affichées, ça prendrait un tabindex="-1" et quelques modifs + un script js. À tester ultérieurement!-->
+                <div class="slide--default"><a href="index.html"><img src="img/car-1.png" alt="Cuphead et ses amis avec la mention d'un million de joueurs"></a></div>
+                <div><a href="index.html" tabindex="-1"><img src="img/car-2.png" alt="Cuphead dlc the delicious last course maintenant disponible" ></a></div>
+                <div><a href="index.html" tabindex="-1"><img src="img/car-3.png" alt="Cuphead et Mugman qui se battent contre une carotte géante, le tout basé sur le jeu original."></a></div>
+                <div><a href="index.html" tabindex="-1"><img src="img/car-4.png" alt="Image promotionnelle de la série Netflix de Cuphead et Mugman"></a></div>
+              </div>
+              
+            <div class="slide__arrows">
+              <div><a href="#slide-4" aria-label="Retour vers la dernière image du carousel"></a><a href="#slide-2" aria-label="Lien vers la deuxième image du carousel"></a></div>
+              <div><a href="#slide-1" aria-label="Retour vers la première image du carousel"></a><a href="#slide-3" aria-label="Lien vers la troisième image du carousel"></a></div>
+              <div><a href="#slide-2" aria-label="Retour vers la seconde image du carousel"></a><a href="#slide-4" aria-label="Lien vers la dernière image du carousel"></a></div>
+              <div><a href="#slide-3" aria-label="Retour vers l'avant-dernière image du carousel"></a><a href="#slide-1" aria-label="Lien vers la première image du carousel"></a></div>
+            </div>
+
+            <div class="slide__bullets">
+                <a class="slide__bullets--default" aria-label="Lien rapide vers la première image du carousel" href="#slide-1"></a>
+                <a href="#slide-2" aria-label="Lien rapide vers la deuxième image du carousel"></a>
+                <a href="#slide-3" aria-label="Lien rapide vers la troisième image du carousel"></a>
+                <a href="#slide-4" aria-label="Lien rapide vers la quatrième image du carousel"></a>
+            </div>
+        </div>
+</section>
+
+<section>
+    <h2 class="screen-reader-text">Section d'inscription à l'info-lettre du site.</h2>
+    <div class="wavy-bg__img">
+        <div class="newsletter container">
+        <h2>INFO-LETTRE</h2>
+        <p>Inscrivez-vous à l’info-lettre pour être au courant de toutes les mises à jour du jeu et du nouveau contenu en route!</p>
+        <form class="newsletter__form" id="newsletter-form" action="confirm-infolettre.html" onsubmit="return validateNewsletterForm()" novalidate>
+            <div class="input-control">
+            <label id="newsletter-label" for="newsletter-email">Email:</label>
+            <input class="form__input" type="email" id="newsletter-email" name="email" placeholder="xyz@mail.com" autocomplete="email" required>
+            <div class="errorMessage"></div>
+            </div>
+            <button class="btn" type="submit">S'INSCRIRE</button>
+        </form>
+        </div>
+    </div>
+    <div class="skinpack__bg">
+        <div class="container skinpack">
+            <div class="skinpack__img">
+                <img src="img/netflix.svg" alt="cuphead et mugman en habits de prison de la série netflix">
+            </div>
+            <div class="skinpack__text">
+                <h2 class="title">NOUVEAU « SKIN PACK » <span class="netflix">NETFLIX</span> GRATUIT!</h2>
+                <p>Récupérez votre âme avec allure grâce aux habits de Cuphead et Mugman tirés de la série « <span class="netflix"><a class="netflix" target="_blank" href="https://www.netflix.com/title/80242531">The Cuphead Show</a></span> » sur <span class="netflix"><a class="netflix" target="_blank" href="https://www.netflix.com/title/80242531">Netflix</a></span>! Disponible à nos abonnés de l’info-lettre.</p>
+            </div>
+            <div class="skinpack__btn">
+                <a class="btn" href="index.html">Voir les tenues</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="screen-reader-text">Section de description des caractéristiques principales du jeu.</h2>
+    <div class="features container spacer">
+        <div class="features__title">
+            <h2>Le jeu magique tout droit sorti des années 30s!</h2>
+            <p>Avec son esthétique visuelle authentique aux début de l’histoire de l’animation, le jeu a réussi à capturer l'essence même de cette époque. Cuphead saura vous plaire par son rythme d'action classique de type "run and gun", axé principalement sur les combats de boss. Il saura plaire aux joueurs aguéris grâce à son gameplay exigeant et rapide, avec des combats de boss épiques, mettant les compétences des joueurs à rude épreuve dans votre quête à rembourser le diable.
+            </p>
+        </div>
+        <div class="cards__list">
+            <div class="cards__card">
+                <img src="img/feat-1.svg" alt="Mug man qui joue de la trompette">
+                <h3>Fidèle aux techniques d'antan</h3>
+                <p> Inspiré des dessins animés des années 1930s, les visuels et l'audio sont réalisés avec minutie en utilisant les mêmes techniques de l’époque: l'animation traditionnelle dessinée à la main, les décors à l'aquarelle et des enregistrements originaux de jazz.</p>
+            </div>
+            <div class="cards__card">
+                <img src="img/feat-2.svg" alt="Ms. Chalice qui joue de la flutte">
+                <h3>Jouez en famille</h3>
+                <p> Incarnez Cuphead ou Mugman en solo ou en coopération locale, alors que vous découvrez des mondes étranges, de nouvelles armes, de puissantes attaques spéciales et des secrets cachés tout en essayant de rembourser votre dette envers le diable !</p>
+            </div>
+            <div class="cards__card">
+                <img src="img/feat-3.svg" alt="Cuphead qui mène l'orchestre">
+                <h3>Un défi exaltant!</h3>
+                <p> Une immersion totale dans un univers figé dans le temps, avec une trame sonore originale en harmonie au rythme des combats de boss palpitants, offrant aux joueurs un défi stimulant et gratifiant.</p>
+            </div>
+        </div>
+            <div>
+            <h2>Disponible sur:</h2>
+            </div>
+            <div class="platforms">
+                <img src="img/xbox.svg" alt="icône plateforme de jeu Xbox">
+                <img src="img/windows.svg" alt="icône plateforme de jeu Windows">
+                <img src="img/switch.svg" alt="icône plateforme de jeu Nintendo Switch">
+                <img src="img/ps4.svg" alt="icône plateforme de jeu Playstation">
+                <img src="img/steam.svg" alt="icône plateforme de jeu Steam">
+                <img src="img/mac.svg" alt="icône plateforme de jeu Mac">
+            </div>
+        </div>
+</section>
+<section class="gallery__bg">
+    <h2 class="screen-reader-text">Section de gallerie d'images tirées du jeu.</h2>
+    <div class="container gallery">
+        <div>
+            <h2>Quelques captures d'écran</h2>
+        </div>
+        <ul class="gallery__grid" role="tablist">
+            <li class="gallery__img gallery__img--pos1" role="tab"><img src="img/gal-1.jpg" alt="Personnage qui conduit une voiture en forme de pomme."></li>
+            <li class="gallery__img gallery__img--pos2" role="tab"><img src="img/gal-2.jpg" alt="Poisson dans l'eau qui sort de sa maison fièrement."></li>
+            <li class="gallery__img gallery__img--pos3" role="tab"><img src="img/gal-3.jpg" alt="Cacahouette qui danse et chante sur une scène."></li>
+            <li class="gallery__img gallery__img--pos4" role="tab"><img src="img/gal-4.jpg" alt="Le diable qui tend la main vers les personnages principaux, qui sont prêts à se défendre."></li>
+            <li class="gallery__img gallery__img--pos5" role="tab"><img src="img/gal-5.jpg" alt="Personnage maléfique qui joue d'un instrument de musique dans les bois."></li>
+            <li class="gallery__img gallery__img--pos6" role="tab"><img src="img/gal-6.jpg" alt="Fleur menaçante qui attaque Cuphead et Mugman."></li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2 class="screen-reader-text">Section de statistiques sur notre banque de joueurs et critiques.</h2>
+    <div class="chart">
+        <div class="donut">
+            <div class="donut__fill">
+                <div class="donut__inner">
+                    <div class="donut__text">
+                        <h3>96%</h3>
+                        <p>de nos cupheads sur <a href="https://store.steampowered.com/app/268910/Cuphead/" target="_blank">Steam</a> recommandent.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-chart__text">
+                <div class="chart__header">
+                    <h2>L'avis de nos joueurs</h2>
+                    <p>Depuis sa sortie, Cuphead a conquis les cœurs de plusieurs joueurs à travers le globe et a été chaleureusement salué par la critique.</p>
+                </div>
+                <div class="chart__stats">
+                    <div class="stats__text">
+                            <h3>6M+</h3>
+                            <p>de joueurs depuis 2018.</p>
+                    </div>
+                    <div class="stats__text">
+                            <h3>9/10</h3>
+                            <p>«Finely tooned.»<br><a href="https://www.ign.com/games/cuphead" target="_blank">-IGN</a></p>
+                    </div>
+                </div>
+                <div class="chart__btn">
+                    <a class="btn" href="index.html" target="_self">Voir plus</a>
+                </div>
+        </div>
+    </div>
+</section>
+<section class="wavy-bg__img">
+    <h2 class="screen-reader-text">Section de présentation des personnages principaux.</h2>
+    <div class="people">
+    <h2>Nos personnages</h2>
+    <div class="people__list">
+    <div class="list__card">
+        <img src="img/img-card-1.png" alt="Image de Cuphead, le personnage principal.">
+        <h3>Cuphead</h3>
+        <p class="card__subtitle">Notre tasse emblématique</p>
+        <p>Cuphead est le protagoniste énergique et ambitieux du jeu. Il est connu pour son caractère impulsif et son désir d'aventure au travers de quêtes périlleuses.</p>
+        <div class="card__social">
+            <img src="img/share.svg" alt="icône de liens de partage sur la fiche descriptive de Cuphead">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=cuphead.com/accueil#cuphead-card" target="_blank"><img src="img/fb.svg" alt="icône pour partager le profil de cuphead sur facebook"></a>
+            <a href="https://twitter.com/intent/tweet?url=cuphead.com/accueil#cuphead-card" target="_blank"><img src="img/tw.svg" alt="icône pour partager le profil de cuphead sur twitter"></a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=cupheadgame.com/accueil#cuphead-card" target="_blank"><img src="img/in.svg" alt="icône pour partager le profil de cuphead sur Linkedin"></a>
+        </div>
+    </div>
+    <div class="list__card">
+        <img src="img/img-card-2.png" alt="Image de Mugman le deuxième joueur.">
+        <h3>Mugman</h3>
+        <p class="card__subtitle">Notre bras droit!</p>
+        <p>Mugman est le frère cadet de Cuphead. Il plus prudent et réservé que celui-ci, mais reste un compagnon loyal et solidaire au travers de ses aventures.</p>
+        <div class="card__social">
+            <img src="img/share.svg" alt="icône de liens de partage  sur la fiche descriptive de Mugman">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=cuphead.com/accueil#mugman-card" target="_blank"><img src="img/fb.svg" alt="icône pour partager le profil de mugman sur facebook"></a>
+            <a href="https://twitter.com/intent/tweet?url=cuphead.com/accueil#mugman-card" target="_blank"><img src="img/tw.svg" alt="icône pour partager le profil de mugman sur twitter"></a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=cupheadgame.com/accueil#mugman-card" target="_blank"><img src="img/in.svg" alt="icône pour partager le profil de mugman sur Linkedin"></a>
+        </div>
+    </div>
+    <div class="list__card">
+        <div class="card__dlc">
+        <img src="img/img-card-3.png" alt="Image de Ms. Chalice qui sourit.">
+        <a href="index.html" target="_self"><img class="dlc__img" src="img/dlc.svg" alt="lien indiquant que Ms. Chalice fait partie du DLC du jeu."></a>
+        </div>
+        <h3>Ms. Chalice</h3>
+        <p class="card__subtitle">La charmante recrue</p>
+        <p>Ms. Chalice est une alliée précieuse pour notre duo de tasses préférées. Par sa personnalité contagieuse et énergique, elle saura motiver les troupes face aux embuches!</p>
+        <div class="card__social">
+            <img src="img/share.svg" alt="icône de liens de partage sur la fiche descriptive de Ms. Chalice">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=cuphead.com/accueil#mschalice-card" target="_blank"><img src="img/fb.svg" alt="icône pour partager le profil de Ms. Chalice sur facebook"></a>
+            <a href="https://twitter.com/intent/tweet?url=cuphead.com/accueil#mschalice-card" target="_blank"><img src="img/tw.svg" alt="icône pour partager le profil de Ms. Chalice sur twitter"></a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=cupheadgame.com/accueil#mschalice-card" target="_blank"><img src="img/in.svg" alt="icône pour partager le profil de Ms. Chalice sur Linkedin"></a>
+        </div>
+    </div>
+    <div class="list__card">
+        <img src="img/img-card-4.png" alt="Image du diable qui sourit.">
+        <h3>Le Diable</h3>
+        <p class="card__subtitle">Vous lui devez une énorme somme!</p>
+        <p>Chef du casino et reconnu pour ses ruses sans scrupules, le diable offrira un pari à Cuphead et Mugman qu’ils ne peuvent refuser.</p>
+        <div class="card__social">
+            <img src="img/share.svg" alt="icône de liens de partage sur la fiche descriptive du diable">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=cuphead.com/accueil#devil-card" target="_blank"><img src="img/fb.svg" alt="icône pour partager le profil du diable sur facebook"></a>
+            <a href="https://twitter.com/intent/tweet?url=cuphead.com/accueil#devil-card" target="_blank"><img src="img/tw.svg" alt="icône pour partager le profil du diable sur twitter"></a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=cupheadgame.com/accueil#devil-card" target="_blank"><img src="img/in.svg" alt="icône pour partager le profil du diable sur Linkedin"></a>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<section>
+    <h2 class="screen-reader-text">Section de contact par courriel et carte interactive de notre maison-mère.</h2>
+    <div class="map">
+        <div class="map__form map__bg--mobile">
+            <div class="form__card">
+                <div class="form__header">
+                    <h2>Nous contacter</h2>
+                    <img src="img/contact.svg" alt="icône de contact">
+                </div>
+                <p class="p--bold">Il nous fera plaisir de discuter de nos
+                    tasses préférées avec vous!</p>
+                <form class="form__content" id="contact-form" action="confirm-form.html" onsubmit="return validateContactForm()" novalidate>
+                    <div class="form__inputwidth input-control">
+                        <label id="last-name-label" for="last-name">Nom de famille:</label>
+                        <input class="form__input" type="text" id="last-name" name="last-name" placeholder="Nom de famille" autocomplete="given-name" required>
+                        <div class="errorMessage"></div>
+                    </div>
+                    <div class="form__inputwidth input-control">
+                        <label id="first-name-label" for="first-name">Prénom:</label>
+                        <input class="form__input" type="text" id="first-name" name="first-name"  placeholder="Prénom"  autocomplete="family-name" required>
+                        <div class="errorMessage"></div>
+                    </div>
+                    <div class="form__inputwidth input-control">
+                        <label id="email-label" for="email">Email:</label>
+                        <input class="form__input" type="email" id="email" name="email" placeholder="xyz@mail.com"  autocomplete="email" required>
+                        <div class="errorMessage"></div>
+                    </div>
+                    <div class="form__inputwidth input-control">
+                        <label id="message-label" for="message">Message:</label>
+                        <textarea class="form__input" id="message" name="message"  placeholder="Message" required></textarea>
+                        <div class="errorMessage"></div>
+                    </div>
+                    <button class="btn" type="submit">Envoyer</button>
+                </form>
+        </div>
+        </div>
+        <iframe title="Carte Google Map de notre studio" class="map__bg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2897.44975296514!2d-79.76501452355383!3d43.430321966817075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b6714cd2bf895%3A0x3bb23a25aea6ae0c!2s2247%20Grand%20Oak%20Trail%2C%20Oakville%2C%20ON%20L6M%204V3!5e0!3m2!1sen!2sca!4v1686505599153!5m2!1sen!2sca" style="border:0;" loading="lazy"></iframe>
+    </div>
+</section>
+</main>
+
+<footer>
+    <div class="container footer">
+        <div class="footer__logo">
+        <a href="index.html"><img src="./img/logo-footer.svg" alt="logo du jeu Cuphead"></a>
+        </div>
+        <div>
+            <ul class="nav-link__footer" role="tablist">
+                <li id="apropos-footer" role="tab"><a class="nav-link-item__footer" id="apropos-footer-tab" href="index.html">À propos de nous</a></li>
+                <li id="art-footer" role="tab"><a class="nav-link-item__footer" id="art-footer-tab" href="index.html">Origines artistiques</a></li>
+                <li id="consoles-footer" role="tab"><a class="nav-link-item__footer" id="consoles-footer-tab" href="index.html">Consoles</a></li>
+                <li id="careers-footer" role="tab"><a class="nav-link-item__footer" id="careers-footer-tab" href="index.html">Carrières</a></li>
+                <li id="faqs-footer" role="tab"><a class="nav-link-item__footer" id="faqs-footer-tab" href="index.html">Faqs</a></li>
+                <li id="privacy-footer" role="tab"><a class="nav-link-item__footer" id="privacy-footer-tab" href="index.html">Politiques de confidentialité</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-coords">
+            <div class="footer__owner">
+                <a href="https://anthonylemay.com" target="_blank">Fait par: Anthony Lemay</a>
+            </div>
+            <div>
+                <ul class="footer__social" role=tablist>
+                    <li  role="tab"><a href="https://www.facebook.com/gaming/cuphead" target="_blank"><img src="img/fb.svg" alt="icône de Facebook"></a></li>
+                    <li role="tab"><a href="https://twitter.com/studiomdhr" target="_blank"><img src="img/tw.svg" alt="icône de twitter"></a></li>
+                    <li role="tab"><a href="https://www.linkedin.com/company/studiomdhr/" target="_blank"><img src="img/in.svg" alt="icône de Linkedin"></a></li>
+                    <l role="tab"><a href="https://www.instagram.com/cupheadshow/" target="_blank"><img src="img/ig.svg" alt="icône d'Instagram"></a></l>
+                </ul>
+            </div>
+            <div class="footer__contact">
+                <div class="contact-link__footer">
+                    <a class="screen-reader-text" href="tel:15819850167" target="_blank" aria-label="Lien pour appeller directement le studio">Lien vers le numéro de téléphone au +1 581 985 0167</a>
+                    <a class="footer__contact__item__element" href="tel:15819850167" target="_blank"><img src="img/phone.svg" alt="icône de lettre cliquable signifiant un téléphone"></a>
+                    <a href="tel:15819850167" class="phone-number" target="_blank" aria-label="Lien pour appeller directement le studio"><p class="phone-number__text"></p></a>
+                    <a class="screen-reader-text" href="mailto:info@anthonylemay.com" target="_blank">Lien vers l'adresse courriel de info@anthonylemay.com'</a>
+                    <a class="footer__contact__item__element" href="mailto:info@anthonylemay.com" target="_blank"><img src="img/mail.svg" alt="icône de lettre cliquable signifiant un email"></a>
+                    <a href="mailto:info@anthonylemay.com" class="email" target="_blank" aria-label="Lien pour écrire un courriel directement au studio"><p class="email__text"></p></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

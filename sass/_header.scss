@@ -1,0 +1,170 @@
+@use './theme/colors';
+@use './theme/fonts';
+@use './theme/fx';
+@use './theme/mixins';
+
+.header{
+    background-color: colors.$yellow;
+    padding: 1rem;
+    /*position: sticky; // si on veut que le menu flotte
+    z-index: 4;*/
+    top: 0;
+    &__menu{
+        display:flex;
+        justify-content: space-between;
+        align-items:center;
+    }
+}
+
+.nav {
+    a {
+        font-family: fonts.$h;
+        font-size: 1.25rem;
+        color: colors.$black;
+        text-decoration: none;
+
+        &:hover {
+            color: colors.$white;
+        }
+    }
+
+    img {
+        margin: 0 .3rem 0 .3rem;
+    }
+
+    &__logo {
+        min-width: 25%;
+        &--shadow{
+            filter: fx.$drop-shadow;
+        }
+        &:hover {
+            width: 28%;
+            filter: fx.$drop-shadow--big;
+        }
+
+        &--burger {
+            display: none;
+            margin: auto;
+        }
+    }
+    &--active{
+
+        border-bottom: 0.19rem solid colors.$black;
+        transition:  0.2s linear;
+    }
+    &__list{
+        @include mixins.flexRow;
+        align-items:flex-end;
+    }
+}
+
+.nav__burger {
+    display: none;
+    &:hover {
+      filter: invert(100%) sepia(6%) saturate(641%) hue-rotate(218deg) brightness(106%) contrast(106%);
+    }
+    &__bar {
+      display: block;
+      width: 2.5rem;
+      height: 0.5rem;
+      margin: 0.25rem 0;
+      transition: all 0.3s ease-in-out;
+      background-color: #000000;
+    }
+}
+  
+.list__item{
+    margin:1rem;
+    &__arrow:hover{
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(291deg) brightness(103%) contrast(102%);
+    }
+
+}
+
+@media screen and (max-width: 1150px){
+    .nav__logo{
+        min-width:20%;
+    }
+
+    .nav a{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 960px){
+    .nav.active .nav__list {
+        @include mixins.flexColumn;
+        align-items: center;
+        width: 100%;
+      }
+      
+      .nav {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        background-color: colors.$white;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+        
+        a {
+          font-size: 2rem;
+        }
+        
+        &__logo {
+          min-width: 30%;
+      
+          &:hover {
+            filter: fx.$drop-shadow--med;
+          }
+        }
+        
+        &__burger {
+          z-index: 2;
+          display: block;
+          cursor: pointer;
+          
+          &.active:hover {
+            filter: brightness(0) contrast(100%) invert(77%) sepia(48%) saturate(711%) hue-rotate(354deg) brightness(104%) contrast(87%);
+          }
+          
+          &.active .nav__burger__bar:nth-child(2) {
+            opacity: 0;
+          }
+          
+          &.active .nav__burger__bar:nth-child(1) {
+            transform: translateY(15px) rotate(45deg);
+          }
+          
+          &.active .nav__burger__bar:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+          }
+        }
+        
+        &.active {
+          z-index: 1;
+          right: 0;
+          @include mixins.alignJust--center;
+          
+          & .nav__logo--burger {
+            filter: fx.$drop-shadow;
+            display: flex;
+            max-width: 30%;
+            padding: 4rem 0 6rem 0;
+            margin: 0 auto;
+            
+            &:hover {
+              filter: grayscale(100%);
+            }
+          }
+        }
+      }      
+}
+
+@media screen and (max-width: 960px){
+    .nav__logo{
+        min-width:40%;
+    }
+}

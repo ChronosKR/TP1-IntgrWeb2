@@ -1,0 +1,126 @@
+@use './theme/colors';
+@use './theme/fonts';
+@use './theme/fx';
+@use './theme/mixins';
+
+.people{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    h2{
+        margin: 6rem 0 0 0;
+    }
+    &__list{
+        display: flex;
+        flex-direction: row;
+        align-items:center;
+        justify-content: space-around;
+        margin: 6rem 0 0 0;
+    }
+    
+}
+
+.list__card{
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
+    justify-content:center;
+
+    padding:2rem;
+    background-color: colors.$white;
+    border-radius: 1rem;
+    width: 22%;
+    margin: 0 0 6rem 0;  
+    filter: drop-shadow(.5rem .5rem rgb(0 0 0));
+    h3{
+
+        margin: 1rem 0 0 0;
+        justify-content:flex-start;
+    }
+    p{
+        text-align:left;
+        width: 100%;
+        padding:1rem 0 1rem 0;
+    }
+    img{
+        border-radius:50%;
+        width: 50%;
+    }  
+}
+
+.card{
+    &__subtitle{
+        font-weight: fonts.$bold;
+        padding: 1rem 0 0 0;
+    }
+    &__dlc{
+        display: flex;
+        flex-direction: row;
+        & .dlc__img{
+            width:100%;
+        }
+        &.dlc__img:hover{
+            filter: brightness(0) contrast(100%)invert(77%) sepia(48%) saturate(711%) hue-rotate(354deg) brightness(104%) contrast(87%);
+        }
+    }
+    &__social{
+        display:flex;
+        flex-direction:row;
+        margin:1rem 0 1rem 0;
+        justify-content: flex-start;
+        img{
+            width:2rem;
+            height:2rem;
+            margin: 0 .5rem 0 0;
+        }
+        img:hover{
+            width:3rem;
+            height:3rem;
+            filter: invert(88%) sepia(83%) saturate(7499%) hue-rotate(327deg) brightness(95%) contrast(96%);
+        }
+    }
+    
+    
+}
+ 
+
+@media screen and (max-width: 1150px){
+
+    .people {
+        h2 {
+            margin-top: 10rem;
+        }
+        &__list {
+            flex-wrap: wrap;
+        }
+    }
+    
+    .list__card {
+      width:40%;
+
+    }
+
+    .card__social {
+        & img {
+            width: 3rem;
+            height: 3rem;
+            margin: 0 1rem 0 0;
+            &:hover {
+                width: 4rem;
+                height: 4rem;
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 800px){
+    
+    .people h2{
+        margin-top: 15rem;
+    }
+
+    .list__card {
+      width:60%;
+    }
+}
