@@ -3,80 +3,47 @@
 @use './theme/fx';
 @use './theme/mixins';
 
-// Filler ads and decorative elements
-.newspaper-margins {
-    position: relative;
-    
-    &::before,
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 8rem;
-        background: repeating-linear-gradient(
-            transparent,
-            transparent 0.05rem,
-            colors.$ink-faded 0.05rem,
-            colors.$ink-faded 0.1rem
-        );
-        opacity: 0.1;
-        z-index: 1;
-    }
-    
-    &::before {
-        left: -9rem;
-        border-style: dashed;
-        border-width: 0 0.1rem 0 0;
-        border-color: colors.$ink-faded;
-    }
-    
-    &::after {
-        right: -9rem;
-        border-style: dashed;
-        border-width: 0 0 0 0.1rem;
-        border-color: colors.$ink-faded;
-    }
-}
-
+// Static filler ads that don't scroll
 .filler-ads {
-    position: fixed;
-    top: 12rem;
-    width: 7rem;
-    z-index: 10;
+    position: absolute;
+    top: 0;
+    width: 12rem;
+    height: 100%;
+    z-index: 5;
     
     &--left {
-        left: 1rem;
+        left: -13rem;
     }
     
     &--right {
-        right: 1rem;
+        right: -13rem;
     }
 }
 
+// Large ad blocks
 .ad-block {
     background-color: colors.$paper-aged;
-    border: 0.15rem solid colors.$ink;
-    border-radius: 0.3rem;
-    padding: 0.8rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
-    font-size: 0.7rem;
-    line-height: 1.2;
+    border: 0.2rem solid colors.$ink;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+    font-size: 0.9rem;
+    line-height: 1.4;
     
     &__graphic {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 3rem;
-        margin-bottom: 0.5rem;
+        height: 4rem;
+        margin-bottom: 1rem;
         background-color: colors.$white;
-        border: 0.1rem solid colors.$ink;
-        border-radius: 0.2rem;
+        border: 0.2rem solid colors.$ink;
+        border-radius: 0.3rem;
         
         .graphic-icon {
-            width: 2rem;
-            height: 2rem;
+            width: 3rem;
+            height: 3rem;
             background-color: colors.$ink;
             border-radius: 50%;
             position: relative;
@@ -93,69 +60,42 @@
                 &::after {
                     content: '';
                     position: absolute;
-                    bottom: -0.3rem;
+                    bottom: -0.4rem;
                     left: 50%;
                     transform: translateX(-50%);
-                    width: 0.3rem;
-                    height: 0.3rem;
+                    width: 0.4rem;
+                    height: 0.4rem;
                     background-color: colors.$ink;
-                    border-radius: 50%;
-                }
-            }
-            
-            &--exclamation {
-                border-radius: 0.2rem;
-                
-                &::before {
-                    content: '';
-                    position: absolute;
-                    top: 0.2rem;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 0.2rem;
-                    height: 1rem;
-                    background-color: colors.$paper;
-                }
-                
-                &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: 0.2rem;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: 0.2rem;
-                    height: 0.2rem;
-                    background-color: colors.$paper;
                     border-radius: 50%;
                 }
             }
             
             &--hat {
-                border-radius: 0.2rem 0.2rem 0 0;
+                border-radius: 0.3rem 0.3rem 0 0;
                 
                 &::after {
                     content: '';
                     position: absolute;
-                    bottom: -0.2rem;
-                    left: -0.3rem;
-                    right: -0.3rem;
-                    height: 0.2rem;
+                    bottom: -0.3rem;
+                    left: -0.4rem;
+                    right: -0.4rem;
+                    height: 0.3rem;
                     background-color: colors.$ink;
-                    border-radius: 0.1rem;
+                    border-radius: 0.2rem;
                 }
             }
             
             &--inkwell {
-                border-radius: 50% 50% 20% 20%;
+                border-radius: 50% 50% 30% 30%;
                 
                 &::before {
                     content: '';
                     position: absolute;
-                    top: 0.3rem;
+                    top: 0.4rem;
                     left: 50%;
                     transform: translateX(-50%);
-                    width: 0.8rem;
-                    height: 0.8rem;
+                    width: 1.2rem;
+                    height: 1.2rem;
                     background-color: colors.$paper;
                     border-radius: 50%;
                 }
@@ -165,38 +105,49 @@
     
     &__text {
         font-family: fonts.$p;
-        font-size: 0.65rem;
+        font-size: 0.8rem;
         color: colors.$ink;
         text-align: center;
-        line-height: 1.3;
-        font-weight: fonts.$regular;
+        line-height: 1.4;
+        font-weight: fonts.$bold;
+    }
+    
+    &__price {
+        font-family: fonts.$tonic;
+        font-size: 1rem;
+        color: colors.$red;
+        text-align: center;
+        margin-top: 0.5rem;
+        font-weight: fonts.$ultra;
+        text-transform: uppercase;
     }
 }
 
+// Large classifieds sections
 .classifieds {
     background-color: colors.$paper;
     border: 0.2rem solid colors.$ink;
-    border-radius: 0.3rem;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
     
     &__header {
         font-family: fonts.$tonic;
-        font-size: 0.8rem;
+        font-size: 1.1rem;
         font-weight: fonts.$ultra;
         text-transform: uppercase;
         text-align: center;
-        margin-bottom: 0.8rem;
-        padding-bottom: 0.3rem;
-        border-bottom: 0.1rem solid colors.$ink;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 0.2rem solid colors.$ink;
         letter-spacing: 0.05rem;
     }
     
     &__item {
         font-family: fonts.$p;
-        font-size: 0.6rem;
-        line-height: 1.4;
-        margin-bottom: 0.8rem;
+        font-size: 0.75rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
         color: colors.$ink;
         text-align: justify;
         hyphens: auto;
@@ -212,7 +163,60 @@
     }
 }
 
-// Decorative corner elements
+// Cartoon seal with price
+.cartoon-seal {
+    background-color: colors.$yellow;
+    border: 0.3rem solid colors.$ink;
+    border-radius: 50%;
+    padding: 1rem;
+    margin: 2rem 0;
+    text-align: center;
+    position: relative;
+    box-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.2);
+    
+    &::before {
+        content: '★';
+        position: absolute;
+        top: -0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.5rem;
+        color: colors.$red;
+        background-color: colors.$white;
+        border: 0.2rem solid colors.$ink;
+        border-radius: 50%;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    &__text {
+        font-family: fonts.$tonic;
+        font-size: 0.7rem;
+        color: colors.$ink;
+        text-transform: uppercase;
+        font-weight: fonts.$ultra;
+        margin-bottom: 0.3rem;
+    }
+    
+    &__price {
+        font-family: fonts.$tonic;
+        font-size: 1.2rem;
+        color: colors.$red;
+        font-weight: fonts.$ultra;
+        text-transform: uppercase;
+    }
+}
+
+// Ensure the newspaper wrapper can contain the ads
+.newspaper-content-wrapper {
+    position: relative;
+    overflow: visible;
+}
+
+// Corner ornaments and other decorative elements remain the same...
 .corner-ornament {
     position: absolute;
     width: 3rem;
@@ -238,7 +242,6 @@
     }
 }
 
-// Section dividers
 .section-divider {
     display: flex;
     align-items: center;
@@ -288,7 +291,6 @@
     }
 }
 
-// Pointer arrows
 .pointer-arrow {
     display: inline-block;
     width: 1.5rem;
@@ -322,17 +324,10 @@
     }
 }
 
-// Responsive behavior
-@media screen and (max-width: 1400px) {
+// Responsive behavior - only show on very large screens
+@media screen and (max-width: 1600px) {
     .filler-ads {
         display: none;
-    }
-    
-    .newspaper-margins {
-        &::before,
-        &::after {
-            display: none;
-        }
     }
 }
 
