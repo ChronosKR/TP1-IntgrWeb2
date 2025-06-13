@@ -12,64 +12,70 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    opacity: 0.7; // Make it more transparent
+    transition: opacity 0.3s ease;
+    
+    &:hover {
+        opacity: 0.9; // Slightly more visible on hover
+    }
 }
 
 .character-bubble {
-    background-color: colors.$yellow;
-    border: 0.2rem solid colors.$ink;
+    background-color: rgba(238, 199, 50, 0.8); // Semi-transparent yellow
+    border: 0.2rem solid rgba(26, 26, 26, 0.6); // Semi-transparent border
     border-radius: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 0.8rem; // Smaller padding
     position: relative;
     animation: bounce 2s infinite ease-in-out;
-    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.1); // Lighter shadow
     
     &::after {
         content: '';
         position: absolute;
-        bottom: -0.5rem;
+        bottom: -0.4rem;
         left: 50%;
         transform: translateX(-50%);
         width: 0;
         height: 0;
-        border-left: 0.5rem solid transparent;
-        border-right: 0.5rem solid transparent;
-        border-top: 0.5rem solid colors.$yellow;
+        border-left: 0.4rem solid transparent;
+        border-right: 0.4rem solid transparent;
+        border-top: 0.4rem solid rgba(238, 199, 50, 0.8);
     }
     
     p {
         margin: 0;
         font-family: fonts.$tonic;
-        font-size: 0.9rem;
-        color: colors.$ink;
+        font-size: 0.7rem; // Smaller font
+        color: rgba(26, 26, 26, 0.8);
         font-weight: fonts.$bold;
         white-space: nowrap;
     }
 }
 
 .character-placeholder {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem; // Smaller size
+    height: 3rem; // Smaller size
     border-radius: 50%;
-    background-color: colors.$sky;
-    border: 0.3rem solid colors.$ink;
+    background-color: rgba(176, 216, 223, 0.6); // Semi-transparent sky blue
+    border: 0.2rem solid rgba(26, 26, 26, 0.4); // More transparent border
     display: flex;
     align-items: center;
     justify-content: center;
     animation: shimmy 3s infinite ease-in-out;
-    box-shadow: 0.3rem 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.15); // Lighter shadow
     cursor: pointer;
     transition: transform 0.3s ease;
     
     &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05); // Less dramatic hover effect
         animation-duration: 1s;
     }
 }
 
 .character-sprite {
-    width: 2.5rem;
-    height: 2.5rem;
-    filter: sepia(20%) saturate(120%) hue-rotate(10deg);
+    width: 2rem; // Smaller sprite
+    height: 2rem; // Smaller sprite
+    filter: sepia(20%) saturate(120%) hue-rotate(10deg) opacity(0.8); // Add opacity to filter
     animation: wiggle 4s infinite ease-in-out;
 }
 
@@ -79,10 +85,10 @@
         transform: translateY(0);
     }
     40% {
-        transform: translateY(-0.5rem);
+        transform: translateY(-0.3rem); // Less dramatic bounce
     }
     60% {
-        transform: translateY(-0.2rem);
+        transform: translateY(-0.1rem);
     }
 }
 
@@ -91,13 +97,13 @@
         transform: translateX(0) rotate(0deg);
     }
     25% {
-        transform: translateX(0.2rem) rotate(2deg);
+        transform: translateX(0.1rem) rotate(1deg); // Subtler movement
     }
     50% {
         transform: translateX(0) rotate(0deg);
     }
     75% {
-        transform: translateX(-0.2rem) rotate(-2deg);
+        transform: translateX(-0.1rem) rotate(-1deg);
     }
 }
 
@@ -106,28 +112,47 @@
         transform: rotate(0deg);
     }
     25% {
-        transform: rotate(5deg);
+        transform: rotate(3deg); // Less dramatic wiggle
     }
     75% {
-        transform: rotate(-5deg);
+        transform: rotate(-3deg);
+    }
+}
+
+// Position it near the tagline instead of bottom corner
+@media screen and (min-width: 1200px) {
+    .animated-character-container {
+        position: absolute;
+        top: 8rem; // Position it near the masthead
+        right: 1rem;
+        bottom: auto;
+        z-index: 50; // Lower z-index so it doesn't interfere
     }
 }
 
 // Responsive adjustments
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1199px) {
     .animated-character-container {
         bottom: 1rem;
         right: 1rem;
-        scale: 0.8;
+        scale: 0.7; // Even smaller on medium screens
     }
     
     .character-bubble {
-        display: none; // Hide speech bubble on mobile for space
+        display: none; // Hide speech bubble on smaller screens
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .animated-character-container {
+        scale: 0.6; // Very small on mobile
+        opacity: 0.5; // More transparent on mobile
     }
 }
 
 @media screen and (max-width: 480px) {
     .animated-character-container {
-        scale: 0.7;
+        scale: 0.5;
+        opacity: 0.4;
     }
 }
