@@ -99,14 +99,39 @@
     &__logo {
         min-width: 15%;
         
+        span {
+            font-family: fonts.$tonic;
+            font-size: 1.2rem;
+            font-weight: fonts.$ultra;
+            color: colors.$ink;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+            text-shadow: 0.1rem 0.1rem 0 colors.$yellow;
+            transition: all 0.3s ease;
+        }
+        
         &:hover {
             transform: scale(1.05);
-            filter: fx.$drop-shadow--med;
+            
+            span {
+                color: colors.$yellow;
+                text-shadow: 0.1rem 0.1rem 0 colors.$ink;
+            }
         }
 
         &--burger {
             display: none;
             margin: auto;
+            
+            span {
+                font-family: fonts.$tonic;
+                font-size: 1.5rem;
+                font-weight: fonts.$ultra;
+                color: colors.$ink;
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+                text-shadow: 0.1rem 0.1rem 0 colors.$yellow;
+            }
         }
     }
     

@@ -18,31 +18,31 @@ const validateContactForm = () => {
     const messageValue = message.value.trim();
 
     if (lastNameValue ===''){
-        setError(lastName, 'Votre nom de famille est requis.');
+        setError(lastName, 'Your last name is required.');
         noError = false;
     } else{
         setSuccess(lastName);
     }
     if (firstNameValue ===''){
-        setError(firstName, 'Votre prénom est requis.');
+        setError(firstName, 'Your first name is required.');
         noError = false;
     } else{
         setSuccess(firstName);
     }
     if (emailValue ===''){
-        setError(email, 'Votre courriel est requis.');
+        setError(email, 'Your email is required.');
         noError = false;
     } else if (!validateEmail(emailValue)){
-        setError(email, 'Veuillez entrer une adresse courriel valide.')
+        setError(email, 'Please enter a valid email address.')
         noError = false;
     }else{
         setSuccess(email);
     }
     if (messageValue ===''){
-        setError(message, 'Votre message est requis.');
+        setError(message, 'Your message is required.');
         noError = false;
     } else if (messageValue.length < 50){
-        setError(message, "Afin de mieux vous répondre, veuillez s'il vous plaît entrer un message d'au moins 25 caractères"); // Surtout à titre indicatif pour tester la fonction.
+        setError(message, "To better respond to you, please enter a message of at least 50 characters");
         noError = false;
     } else{
         setSuccess(message);
@@ -53,10 +53,10 @@ const validateNewsletterForm = () => {
     let noError = true;
     const newsletterEmailValue = newsletterEmail.value.trim();
     if (newsletterEmailValue ===''){
-        setError(newsletterEmail, 'Votre courriel est requis.');
+        setError(newsletterEmail, 'Your email is required.');
         noError = false;
     } else if (!validateEmail(newsletterEmailValue)){
-        setError(newsletterEmail, 'Veuillez entrer une adresse courriel valide.')
+        setError(newsletterEmail, 'Please enter a valid email address.')
         noError = false;
     }else{
         setSuccess(newsletterEmail);
@@ -91,8 +91,8 @@ const validateEmail = (email) => {
 
 
 
-/* fonctions ci-dessous complémentaire/expérimental au projet, test pour pouvoir implémenter l'usage de "tab" à l'intérieur même du menu burger mobile, mais ça semble un peu plus complexe
-pour rendre les nav à l'intérieur non "tabable" lorsqu'ils sont en dehors du viewport/caché pour le moment. Ça prendrait une fonction pour implémenter des tabindex="-1" dans ma structure de html. Je ferai de plus amples tests ultérieurement! */
+/* Functions below are complementary/experimental to the project, test to be able to implement the use of "tab" inside the mobile burger menu, but it seems a bit more complex
+to make the nav inside non-"tabable" when they are outside the viewport/hidden for now. It would take a function to implement tabindex="-1" in my html structure. I will do more extensive tests later! */
 
 function mobileMenu() {
     const isActive = nav.classList.contains('active');

@@ -23,15 +23,21 @@
     justify-content: center;
     align-items: flex-start;
     
-    img {
-        max-width: 8rem;
-        filter: brightness(0) invert(1);
+    span {
+        font-family: fonts.$tonic;
+        font-size: 1.2rem;
+        font-weight: fonts.$ultra;
+        color: colors.$white;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        text-shadow: 0.1rem 0.1rem 0 colors.$yellow;
         transition: all 0.3s ease;
-        
-        &:hover {
-            filter: brightness(0) invert(1) sepia(100%) saturate(1000%) hue-rotate(35deg);
-            transform: scale(1.05);
-        }
+    }
+    
+    &:hover span {
+        color: colors.$yellow;
+        text-shadow: 0.1rem 0.1rem 0 colors.$white;
+        transform: scale(1.05);
     }
 }
 

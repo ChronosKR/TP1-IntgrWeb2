@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Daily Shimmy & Shake Gazette - Votre journal quotidien d'actualités animées dans l'esprit des années 1930">
+    <meta name="description" content="The Daily Shimmy & Shake Gazette - Your daily animated news in the spirit of the 1930s">
     <title>The Daily Shimmy & Shake Gazette</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -15,46 +15,46 @@
 </head>
 
 <body>
-<a class="screen-reader-text" href="#content" tabindex="1">Aller au contenu principal</a>
+<a class="screen-reader-text" href="#content" tabindex="1">Skip to main content</a>
 
 <!-- Newspaper Masthead -->
 <header class="masthead">
     <div class="masthead__container container">
         <div class="masthead__top">
-            <div class="masthead__date">Vol. 1 • No. 1 • Édition Spéciale</div>
-            <div class="masthead__weather">☀️ Ensoleillé • 22°C</div>
+            <div class="masthead__date">Vol. 1 • No. 1 • Special Edition</div>
+            <div class="masthead__weather">☀️ Sunny • 72°F</div>
         </div>
         
         <div class="masthead__title">
             <h1>THE DAILY SHIMMY & SHAKE GAZETTE</h1>
-            <div class="masthead__subtitle">Animated Rubber Hose Nostalgia • Depuis 1930</div>
+            <div class="masthead__subtitle">Animated Rubber Hose Nostalgia • Since 1930</div>
         </div>
         
         <nav id="menu" class="masthead__nav">
             <div class="nav__logo">
-                <a id="logo" href="index.html"><img src="./img/logo.svg" alt="logo du journal"></a>
+                <a id="logo" href="index.html"><span>THE GAZETTE</span></a>
             </div>
-            <div class="nav" role="navigation" aria-label="Menu des pages du site web">
-                <a id="logo-burger" class="nav__logo--burger" href="index.html"><img src="./img/logo.svg" alt="logo du journal"></a>
+            <div class="nav" role="navigation" aria-label="Website navigation menu">
+                <a id="logo-burger" class="nav__logo--burger" href="index.html"><span>THE GAZETTE</span></a>
                 <ul class="nav__list" role=tablist>
                     <li class="nav__item nav--active" role="tab">
-                        <a href="index.html" class="" id="accueil-tab" role="tab" aria-selected="true">
-                            <img src="img/nav-1.svg" alt="Icône personnage Cuphead">Actualités
+                        <a href="index.html" class="" id="news-tab" role="tab" aria-selected="true">
+                            <img src="img/nav-1.svg" alt="Cuphead character icon">News
                         </a>
                     </li>
                     <li class="nav__item" role="tab">
-                        <a href="index.html" class="nav__link" id="a-propos" role="tab" aria-selected="false">
-                            <img src="img/nav-2.svg" alt="Icône personnage Mugman">Chroniques
+                        <a href="index.html" class="nav__link" id="chronicles" role="tab" aria-selected="false">
+                            <img src="img/nav-2.svg" alt="Mugman character icon">Chronicles
                         </a>
                     </li>
                     <li class="nav__item" role="tab">
-                        <a href="index.html" class="nav__link" id="dlc" role="tab" aria-selected="false">
-                            <img src="img/nav-3.svg" alt="Icône personnage Ms. Chalice">Divertissement
+                        <a href="index.html" class="nav__link" id="entertainment" role="tab" aria-selected="false">
+                            <img src="img/nav-3.svg" alt="Ms. Chalice character icon">Entertainment
                         </a>
                     </li>
                     <li class="nav__item" role="tab">
-                        <a href="index.html" class="nav__link" id="studio-MDHR" role="tab" aria-selected="false">
-                            <img src="img/nav-4.svg" alt="Icône personnage Diable">Rédaction
+                        <a href="index.html" class="nav__link" id="editorial" role="tab" aria-selected="false">
+                            <img src="img/nav-4.svg" alt="Devil character icon">Editorial
                         </a>
                     </li>
                 </ul>
@@ -68,16 +68,6 @@
     </div>
 </header>
 
-<!-- Animated Character -->
-<div class="animated-character-container">
-    <div class="character-bubble">
-        <p>🎵 Shimmy & Shake! 🎵</p>
-    </div>
-    <div class="character-placeholder">
-        <img src="./img/logo.svg" alt="Personnage animé du journal" class="character-sprite">
-    </div>
-</div>
-
 <!-- Newspaper Content Wrapper -->
 <div class="newspaper-content-wrapper">
     <main id="content" class="newspaper-main">
@@ -86,8 +76,8 @@
         <section class="breaking-news">
             <div class="container">
                 <div class="breaking-news__banner">
-                    <span class="breaking-news__label">🚨 DERNIÈRE MINUTE</span>
-                    <span class="breaking-news__text">Un nouveau héros fait sensation dans les salles d'arcade!</span>
+                    <span class="breaking-news__label">🚨 BREAKING NEWS</span>
+                    <span class="breaking-news__text">A new hero is making waves in arcade halls!</span>
                 </div>
             </div>
         </section>
@@ -98,8 +88,8 @@
             <!-- Featured Story (Carousel) -->
             <article class="newspaper-article newspaper-article--featured">
                 <header class="article-header">
-                    <h2 class="article-title">GALERIE PHOTOGRAPHIQUE EXCLUSIVE</h2>
-                    <div class="article-byline">Par notre correspondant spécial</div>
+                    <h2 class="article-title">EXCLUSIVE PHOTO GALLERY</h2>
+                    <div class="article-byline">By our special correspondent</div>
                 </header>
                 
                 <div id="carousel" class="carousel">
@@ -109,54 +99,24 @@
                     <s id="slide-4"></s>
 
                     <div class="slide">
-                        <div class="slide--default"><a href="index.html"><img src="img/car-1.png" alt="Cuphead et ses amis avec la mention d'un million de joueurs"></a></div>
-                        <div><a href="index.html" tabindex="-1"><img src="img/car-2.png" alt="Cuphead dlc the delicious last course maintenant disponible" ></a></div>
-                        <div><a href="index.html" tabindex="-1"><img src="img/car-3.png" alt="Cuphead et Mugman qui se battent contre une carotte géante, le tout basé sur le jeu original."></a></div>
-                        <div><a href="index.html" tabindex="-1"><img src="img/car-4.png" alt="Image promotionnelle de la série Netflix de Cuphead et Mugman"></a></div>
+                        <div class="slide--default"><a href="index.html"><img src="img/car-1.png" alt="Cuphead and friends with one million players milestone"></a></div>
+                        <div><a href="index.html" tabindex="-1"><img src="img/car-2.png" alt="Cuphead DLC The Delicious Last Course now available" ></a></div>
+                        <div><a href="index.html" tabindex="-1"><img src="img/car-3.png" alt="Cuphead and Mugman fighting a giant carrot, based on the original game"></a></div>
+                        <div><a href="index.html" tabindex="-1"><img src="img/car-4.png" alt="Promotional image from the Netflix Cuphead and Mugman series"></a></div>
                     </div>
                       
                     <div class="slide__arrows">
-                        <div><a href="#slide-4" aria-label="Retour vers la dernière image du carousel"></a><a href="#slide-2" aria-label="Lien vers la deuxième image du carousel"></a></div>
-                        <div><a href="#slide-1" aria-label="Retour vers la première image du carousel"></a><a href="#slide-3" aria-label="Lien vers la troisième image du carousel"></a></div>
-                        <div><a href="#slide-2" aria-label="Retour vers la seconde image du carousel"></a><a href="#slide-4" aria-label="Lien vers la dernière image du carousel"></a></div>
-                        <div><a href="#slide-3" aria-label="Retour vers l'avant-dernière image du carousel"></a><a href="#slide-1" aria-label="Lien vers la première image du carousel"></a></div>
+                        <div><a href="#slide-4" aria-label="Go back to the last carousel image"></a><a href="#slide-2" aria-label="Go to the second carousel image"></a></div>
+                        <div><a href="#slide-1" aria-label="Go back to the first carousel image"></a><a href="#slide-3" aria-label="Go to the third carousel image"></a></div>
+                        <div><a href="#slide-2" aria-label="Go back to the second carousel image"></a><a href="#slide-4" aria-label="Go to the last carousel image"></a></div>
+                        <div><a href="#slide-3" aria-label="Go back to the third carousel image"></a><a href="#slide-1" aria-label="Go to the first carousel image"></a></div>
                     </div>
 
                     <div class="slide__bullets">
-                        <a class="slide__bullets--default" aria-label="Lien rapide vers la première image du carousel" href="#slide-1"></a>
-                        <a href="#slide-2" aria-label="Lien rapide vers la deuxième image du carousel"></a>
-                        <a href="#slide-3" aria-label="Lien rapide vers la troisième image du carousel"></a>
-                        <a href="#slide-4" aria-label="Lien rapide vers la quatrième image du carousel"></a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Newsletter Subscription -->
-            <article class="newspaper-article newspaper-article--subscription">
-                <header class="article-header">
-                    <h2 class="article-title">ABONNEZ-VOUS À LA GAZETTE!</h2>
-                    <div class="article-byline">Recevez nos éditions spéciales</div>
-                </header>
-                
-                <div class="newsletter">
-                    <p>Ne manquez aucune aventure! Inscrivez-vous pour recevoir nos dernières nouvelles et un cadeau exclusif.</p>
-                    <form class="newsletter__form" id="newsletter-form" action="confirm-infolettre.html" onsubmit="return validateNewsletterForm()" novalidate>
-                        <div class="input-control">
-                            <label id="newsletter-label" for="newsletter-email">Email:</label>
-                            <input class="form__input" type="email" id="newsletter-email" name="email" placeholder="votre@adresse.com" autocomplete="email" required>
-                            <div class="errorMessage"></div>
-                        </div>
-                        <button class="btn" type="submit">S'ABONNER</button>
-                    </form>
-                </div>
-                
-                <div class="skinpack">
-                    <div class="skinpack__img">
-                        <img src="img/netflix.svg" alt="Tenues exclusives Netflix">
-                    </div>
-                    <div class="skinpack__text">
-                        <h3>CADEAU EXCLUSIF <span class="netflix">NETFLIX</span>!</h3>
-                        <p>Recevez des tenues spéciales inspirées de la série animée!</p>
+                        <a class="slide__bullets--default" aria-label="Quick link to the first carousel image" href="#slide-1"></a>
+                        <a href="#slide-2" aria-label="Quick link to the second carousel image"></a>
+                        <a href="#slide-3" aria-label="Quick link to the third carousel image"></a>
+                        <a href="#slide-4" aria-label="Quick link to the fourth carousel image"></a>
                     </div>
                 </div>
             </article>
@@ -164,41 +124,29 @@
             <!-- Main Story -->
             <article class="newspaper-article newspaper-article--main">
                 <header class="article-header">
-                    <h2 class="article-title">L'ÈRE DORÉE DE L'ANIMATION REVIT!</h2>
-                    <div class="article-byline">Par notre critique artistique • Aujourd'hui</div>
+                    <h2 class="article-title">THE GOLDEN AGE OF ANIMATION LIVES ON!</h2>
+                    <div class="article-byline">By our art critic • Today</div>
                 </header>
                 
                 <div class="features">
                     <div class="features__content">
-                        <p>Avec son esthétique visuelle authentique du début de l'histoire de l'animation, cette nouvelle œuvre a réussi à capturer l'essence même de cette époque dorée. L'art du "rubber hose" saura vous plaire par son rythme d'action classique, axé principalement sur les combats épiques.</p>
+                        <p>With its authentic visual aesthetic from the early days of animation history, this new work has successfully captured the very essence of that golden era. The art of "rubber hose" will delight you with its classic action rhythm, focused primarily on epic battles.</p>
                         
                         <div class="cards__list">
                             <div class="cards__card">
-                                <img src="img/feat-1.svg" alt="Techniques d'animation traditionnelle">
-                                <h3>Techniques d'Antan</h3>
-                                <p>Animation traditionnelle dessinée à la main, décors à l'aquarelle et enregistrements originaux de jazz.</p>
+                                <img src="img/feat-1.svg" alt="Traditional animation techniques">
+                                <h3>Vintage Techniques</h3>
+                                <p>Hand-drawn traditional animation, watercolor backgrounds, and original jazz recordings.</p>
                             </div>
                             <div class="cards__card">
-                                <img src="img/feat-2.svg" alt="Divertissement familial">
-                                <h3>Plaisir Familial</h3>
-                                <p>Découvrez des mondes étranges en solo ou en coopération locale avec vos proches.</p>
+                                <img src="img/feat-2.svg" alt="Family entertainment">
+                                <h3>Family Fun</h3>
+                                <p>Discover strange worlds solo or in local co-op with your loved ones.</p>
                             </div>
                             <div class="cards__card">
-                                <img src="img/feat-3.svg" alt="Défi stimulant">
-                                <h3>Défi Exaltant</h3>
-                                <p>Une immersion totale dans un univers figé dans le temps avec des défis stimulants.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="platforms-section">
-                            <h3>Disponible sur toutes les plateformes:</h3>
-                            <div class="platforms">
-                                <img src="img/xbox.svg" alt="Xbox">
-                                <img src="img/windows.svg" alt="Windows">
-                                <img src="img/switch.svg" alt="Nintendo Switch">
-                                <img src="img/ps4.svg" alt="PlayStation">
-                                <img src="img/steam.svg" alt="Steam">
-                                <img src="img/mac.svg" alt="Mac">
+                                <img src="img/feat-3.svg" alt="Stimulating challenge">
+                                <h3>Thrilling Challenge</h3>
+                                <p>Total immersion in a world frozen in time with stimulating challenges.</p>
                             </div>
                         </div>
                     </div>
@@ -208,146 +156,19 @@
             <!-- Photo Gallery -->
             <article class="newspaper-article newspaper-article--gallery">
                 <header class="article-header">
-                    <h2 class="article-title">ALBUM PHOTO</h2>
-                    <div class="article-byline">Clichés exclusifs de nos photographes</div>
+                    <h2 class="article-title">PHOTO ALBUM</h2>
+                    <div class="article-byline">Exclusive shots from our photographers</div>
                 </header>
                 
                 <div class="gallery">
                     <ul class="gallery__grid" role="tablist">
-                        <li class="gallery__img gallery__img--pos1" role="tab"><img src="img/gal-1.jpg" alt="Personnage qui conduit une voiture en forme de pomme."></li>
-                        <li class="gallery__img gallery__img--pos2" role="tab"><img src="img/gal-2.jpg" alt="Poisson dans l'eau qui sort de sa maison fièrement."></li>
-                        <li class="gallery__img gallery__img--pos3" role="tab"><img src="img/gal-3.jpg" alt="Cacahouette qui danse et chante sur une scène."></li>
-                        <li class="gallery__img gallery__img--pos4" role="tab"><img src="img/gal-4.jpg" alt="Le diable qui tend la main vers les personnages principaux."></li>
-                        <li class="gallery__img gallery__img--pos5" role="tab"><img src="img/gal-5.jpg" alt="Personnage maléfique qui joue d'un instrument de musique."></li>
-                        <li class="gallery__img gallery__img--pos6" role="tab"><img src="img/gal-6.jpg" alt="Fleur menaçante qui attaque nos héros."></li>
+                        <li class="gallery__img gallery__img--pos1" role="tab"><img src="img/gal-1.jpg" alt="Character driving an apple-shaped car"></li>
+                        <li class="gallery__img gallery__img--pos2" role="tab"><img src="img/gal-2.jpg" alt="Fish in water proudly emerging from its house"></li>
+                        <li class="gallery__img gallery__img--pos3" role="tab"><img src="img/gal-3.jpg" alt="Peanut dancing and singing on stage"></li>
+                        <li class="gallery__img gallery__img--pos4" role="tab"><img src="img/gal-4.jpg" alt="The devil reaching out to the main characters"></li>
+                        <li class="gallery__img gallery__img--pos5" role="tab"><img src="img/gal-5.jpg" alt="Evil character playing a musical instrument"></li>
+                        <li class="gallery__img gallery__img--pos6" role="tab"><img src="img/gal-6.jpg" alt="Menacing flower attacking our heroes"></li>
                     </ul>
-                </div>
-            </article>
-
-            <!-- Statistics -->
-            <article class="newspaper-article newspaper-article--stats">
-                <header class="article-header">
-                    <h2 class="article-title">SONDAGE EXCLUSIF</h2>
-                    <div class="article-byline">Enquête auprès de nos lecteurs</div>
-                </header>
-                
-                <div class="chart">
-                    <div class="donut">
-                        <div class="donut__fill">
-                            <div class="donut__inner">
-                                <div class="donut__text">
-                                    <h3>96%</h3>
-                                    <p>de satisfaction</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="chart__text">
-                        <div class="chart__header">
-                            <h3>L'avis de nos lecteurs</h3>
-                            <p>Depuis sa création, notre gazette a conquis les cœurs de plusieurs lecteurs à travers le globe.</p>
-                        </div>
-                        <div class="chart__stats">
-                            <div class="stats__text">
-                                <h4>6M+</h4>
-                                <p>de lecteurs fidèles</p>
-                            </div>
-                            <div class="stats__text">
-                                <h4>9/10</h4>
-                                <p>«Formidable!»<br>-Critique</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Character Profiles -->
-            <article class="newspaper-article newspaper-article--profiles">
-                <header class="article-header">
-                    <h2 class="article-title">PORTRAITS DE NOS HÉROS</h2>
-                    <div class="article-byline">Rencontrez les personnages emblématiques</div>
-                </header>
-                
-                <div class="people">
-                    <div class="people__list">
-                        <div class="list__card">
-                            <img src="img/img-card-1.png" alt="Portrait de Cuphead">
-                            <h3>Cuphead</h3>
-                            <p class="card__subtitle">Notre héros emblématique</p>
-                            <p>Protagoniste énergique et ambitieux, connu pour son caractère impulsif et son désir d'aventure.</p>
-                            <div class="card__social">
-                                <img src="img/share.svg" alt="Partager">
-                                <a href="#" target="_blank"><img src="img/fb.svg" alt="Facebook"></a>
-                                <a href="#" target="_blank"><img src="img/tw.svg" alt="Twitter"></a>
-                            </div>
-                        </div>
-                        <div class="list__card">
-                            <img src="img/img-card-2.png" alt="Portrait de Mugman">
-                            <h3>Mugman</h3>
-                            <p class="card__subtitle">Le fidèle compagnon</p>
-                            <p>Frère cadet prudent et réservé, mais compagnon loyal et solidaire dans toutes les aventures.</p>
-                            <div class="card__social">
-                                <img src="img/share.svg" alt="Partager">
-                                <a href="#" target="_blank"><img src="img/fb.svg" alt="Facebook"></a>
-                                <a href="#" target="_blank"><img src="img/tw.svg" alt="Twitter"></a>
-                            </div>
-                        </div>
-                        <div class="list__card">
-                            <img src="img/img-card-3.png" alt="Portrait de Ms. Chalice">
-                            <h3>Ms. Chalice</h3>
-                            <p class="card__subtitle">La charmante recrue</p>
-                            <p>Alliée précieuse avec une personnalité contagieuse et énergique qui motive les troupes!</p>
-                            <div class="card__social">
-                                <img src="img/share.svg" alt="Partager">
-                                <a href="#" target="_blank"><img src="img/fb.svg" alt="Facebook"></a>
-                                <a href="#" target="_blank"><img src="img/tw.svg" alt="Twitter"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Contact Form -->
-            <article class="newspaper-article newspaper-article--contact">
-                <header class="article-header">
-                    <h2 class="article-title">COURRIER DES LECTEURS</h2>
-                    <div class="article-byline">Écrivez-nous vos impressions</div>
-                </header>
-                
-                <div class="map">
-                    <div class="map__form">
-                        <div class="form__card">
-                            <div class="form__header">
-                                <h3>Contactez la Rédaction</h3>
-                                <img src="img/contact.svg" alt="Contact">
-                            </div>
-                            <p class="p--bold">Il nous fera plaisir de publier vos lettres dans notre prochaine édition!</p>
-                            <form class="form__content" id="contact-form" action="confirm-form.html" onsubmit="return validateContactForm()" novalidate>
-                                <div class="form__inputwidth input-control">
-                                    <label id="last-name-label" for="last-name">Nom de famille:</label>
-                                    <input class="form__input" type="text" id="last-name" name="last-name" placeholder="Nom de famille" autocomplete="given-name" required>
-                                    <div class="errorMessage"></div>
-                                </div>
-                                <div class="form__inputwidth input-control">
-                                    <label id="first-name-label" for="first-name">Prénom:</label>
-                                    <input class="form__input" type="text" id="first-name" name="first-name"  placeholder="Prénom"  autocomplete="family-name" required>
-                                    <div class="errorMessage"></div>
-                                </div>
-                                <div class="form__inputwidth input-control">
-                                    <label id="email-label" for="email">Email:</label>
-                                    <input class="form__input" type="email" id="email" name="email" placeholder="votre@adresse.com"  autocomplete="email" required>
-                                    <div class="errorMessage"></div>
-                                </div>
-                                <div class="form__inputwidth input-control">
-                                    <label id="message-label" for="message">Message:</label>
-                                    <textarea class="form__input" id="message" name="message"  placeholder="Votre lettre à la rédaction..." required></textarea>
-                                    <div class="errorMessage"></div>
-                                </div>
-                                <button class="btn" type="submit">Envoyer</button>
-                            </form>
-                        </div>
-                    </div>
-                    <iframe title="Localisation de notre rédaction" class="map__bg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2897.44975296514!2d-79.76501452355383!3d43.430321966817075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b6714cd2bf895%3A0x3bb23a25aea6ae0c!2s2247%20Grand%20Oak%20Trail%2C%20Oakville%2C%20ON%20L6M%204V3!5e0!3m2!1sen!2sca!4v1686505599153!5m2!1sen!2sca" style="border:0;" loading="lazy"></iframe>
                 </div>
             </article>
 
@@ -359,32 +180,32 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer__logo">
-                    <a href="index.html"><img src="./img/logo-footer.svg" alt="Logo de la gazette"></a>
+                    <a href="index.html"><span>THE GAZETTE</span></a>
                 </div>
                 
                 <div class="footer__sections">
                     <div class="footer__section">
-                        <h4>Rubriques</h4>
+                        <h4>Sections</h4>
                         <ul>
-                            <li><a href="index.html">Actualités</a></li>
-                            <li><a href="index.html">Chroniques</a></li>
-                            <li><a href="index.html">Divertissement</a></li>
+                            <li><a href="index.html">News</a></li>
+                            <li><a href="index.html">Chronicles</a></li>
+                            <li><a href="index.html">Entertainment</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer__section">
-                        <h4>La Rédaction</h4>
+                        <h4>Editorial</h4>
                         <ul>
-                            <li><a href="index.html">À propos</a></li>
-                            <li><a href="index.html">Équipe</a></li>
-                            <li><a href="index.html">Carrières</a></li>
+                            <li><a href="index.html">About</a></li>
+                            <li><a href="index.html">Team</a></li>
+                            <li><a href="index.html">Careers</a></li>
                         </ul>
                     </div>
                     
                     <div class="footer__section">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="index.html">Abonnements</a></li>
+                            <li><a href="index.html">Subscriptions</a></li>
                             <li><a href="index.html">Archives</a></li>
                             <li><a href="index.html">Contact</a></li>
                         </ul>
@@ -392,7 +213,7 @@
                 </div>
                 
                 <div class="footer__contact">
-                    <h4>Nous Suivre</h4>
+                    <h4>Follow Us</h4>
                     <div class="footer__social">
                         <a href="#" target="_blank"><img src="img/fb.svg" alt="Facebook"></a>
                         <a href="#" target="_blank"><img src="img/tw.svg" alt="Twitter"></a>
@@ -402,15 +223,15 @@
                     
                     <div class="footer__info">
                         <p>📞 +1 (581) 985-0167</p>
-                        <p>✉️ redaction@shimmy-shake.com</p>
+                        <p>✉️ editorial@shimmy-shake.com</p>
                         <p>📍 Oakville, Ontario</p>
                     </div>
                 </div>
             </div>
             
             <div class="footer__bottom">
-                <p>&copy; 2024 The Daily Shimmy & Shake Gazette • Tous droits réservés</p>
-                <p>Créé par <a href="https://anthonylemay.com" target="_blank">Anthony Lemay</a></p>
+                <p>&copy; 2024 The Daily Shimmy & Shake Gazette • All rights reserved</p>
+                <p>Created by <a href="https://anthonylemay.com" target="_blank">Anthony Lemay</a></p>
             </div>
         </div>
     </footer>
