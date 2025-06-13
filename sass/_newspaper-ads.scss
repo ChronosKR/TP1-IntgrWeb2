@@ -3,20 +3,20 @@
 @use './theme/fx';
 @use './theme/mixins';
 
-// Static filler ads that don't scroll
+// Static filler ads that don't scroll with the page
 .filler-ads {
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 12rem;
     height: 100vh;
     z-index: 5;
     
     &--left {
-        left: 1rem;
+        left: -14rem; // Position outside the main content
     }
     
     &--right {
-        right: 1rem;
+        right: -14rem; // Position outside the main content
     }
 }
 
@@ -214,6 +214,12 @@
 .newspaper-content-wrapper {
     position: relative;
     overflow: visible;
+    max-width: none; // Allow content to extend beyond normal bounds
+}
+
+// Adjust the main container to make room for ads
+.container {
+    position: relative;
 }
 
 // Corner ornaments and other decorative elements
@@ -324,8 +330,15 @@
     }
 }
 
-// Responsive behavior - hide on smaller screens only
-@media screen and (max-width: 1400px) {
+// Show ads on screens wide enough (1920px should definitely show them)
+@media screen and (min-width: 1600px) {
+    .filler-ads {
+        display: block;
+    }
+}
+
+// Hide on smaller screens
+@media screen and (max-width: 1599px) {
     .filler-ads {
         display: none;
     }
