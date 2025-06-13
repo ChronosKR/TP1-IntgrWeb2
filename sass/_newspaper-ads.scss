@@ -5,18 +5,18 @@
 
 // Static filler ads that don't scroll
 .filler-ads {
-    position: absolute;
+    position: fixed;
     top: 0;
     width: 12rem;
-    height: 100%;
+    height: 100vh;
     z-index: 5;
     
     &--left {
-        left: -13rem;
+        left: 1rem;
     }
     
     &--right {
-        right: -13rem;
+        right: 1rem;
     }
 }
 
@@ -216,7 +216,7 @@
     overflow: visible;
 }
 
-// Corner ornaments and other decorative elements remain the same...
+// Corner ornaments and other decorative elements
 .corner-ornament {
     position: absolute;
     width: 3rem;
@@ -324,8 +324,8 @@
     }
 }
 
-// Responsive behavior - only show on very large screens
-@media screen and (max-width: 1600px) {
+// Responsive behavior - hide on smaller screens only
+@media screen and (max-width: 1400px) {
     .filler-ads {
         display: none;
     }
