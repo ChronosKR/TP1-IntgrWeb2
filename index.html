@@ -18,6 +18,19 @@
 <body>
 <a class="screen-reader-text" href="#content" tabindex="1">Skip to main content</a>
 
+<!-- Background Music -->
+<audio id="background-music" loop>
+    <source src="https://soundcloud.com/parov_stelar/booty-swing" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- Music Control Button -->
+<div class="music-control">
+    <button id="music-toggle" class="music-btn" aria-label="Toggle background music">
+        🎵
+    </button>
+</div>
+
 <!-- Newspaper Content Wrapper -->
 <div class="newspaper-content-wrapper">
     <!-- Animated Character -->
@@ -40,7 +53,7 @@
             
             <div class="masthead__title">
                 <h1>THE DAILY SHIMMY & SHAKE GAZETTE</h1>
-                <div class="masthead__subtitle">Animated Rubber Hose Nostalgia • Since 1930</div>
+                <div class="masthead__subtitle">So Fresh, It's Still the Cat's Pajamas!</div>
             </div>
             
             <nav id="menu" class="masthead__nav">
@@ -93,90 +106,89 @@
         <!-- Main Articles Grid -->
         <div class="newspaper-grid container">
             
-            <!-- Featured Story (Carousel) -->
+            <!-- Featured Story -->
             <article class="newspaper-article newspaper-article--featured">
                 <header class="article-header">
-                    <h2 class="article-title">EXCLUSIVE PHOTO GALLERY</h2>
-                    <div class="article-byline">By our special correspondent</div>
+                    <h2 id="featured-article-title" class="article-title">EXCLUSIVE: RUBBER HOSE REVIVAL SWEEPS NATION!</h2>
+                    <div id="featured-article-byline" class="article-byline">By our entertainment correspondent • Today</div>
                 </header>
                 
-                <div id="carousel" class="carousel">
-                    <s id="slide-1"></s> 
-                    <s id="slide-2"></s>
-                    <s id="slide-3"></s>
-                    <s id="slide-4"></s>
-
-                    <div class="slide">
-                        <div class="slide--default"><a href="index.html"><img src="img/car-1.png" alt="Cuphead and friends with one million players milestone"></a></div>
-                        <div><a href="index.html" tabindex="-1"><img src="img/car-2.png" alt="Cuphead DLC The Delicious Last Course now available" ></a></div>
-                        <div><a href="index.html" tabindex="-1"><img src="img/car-3.png" alt="Cuphead and Mugman fighting a giant carrot, based on the original game"></a></div>
-                        <div><a href="index.html" tabindex="-1"><img src="img/car-4.png" alt="Promotional image from the Netflix Cuphead and Mugman series"></a></div>
-                    </div>
-                      
-                    <div class="slide__arrows">
-                        <div><a href="#slide-4" aria-label="Go back to the last carousel image"></a><a href="#slide-2" aria-label="Go to the second carousel image"></a></div>
-                        <div><a href="#slide-1" aria-label="Go back to the first carousel image"></a><a href="#slide-3" aria-label="Go to the third carousel image"></a></div>
-                        <div><a href="#slide-2" aria-label="Go back to the second carousel image"></a><a href="#slide-4" aria-label="Go to the last carousel image"></a></div>
-                        <div><a href="#slide-3" aria-label="Go back to the third carousel image"></a><a href="#slide-1" aria-label="Go to the first carousel image"></a></div>
-                    </div>
-
-                    <div class="slide__bullets">
-                        <a class="slide__bullets--default" aria-label="Quick link to the first carousel image" href="#slide-1"></a>
-                        <a href="#slide-2" aria-label="Quick link to the second carousel image"></a>
-                        <a href="#slide-3" aria-label="Quick link to the third carousel image"></a>
-                        <a href="#slide-4" aria-label="Quick link to the fourth carousel image"></a>
-                    </div>
+                <div id="featured-article-content" class="article-content">
+                    <p>The nostalgic charm of rubber hose animation has captured hearts across the nation! From coast to coast, citizens are rediscovering the joy of bouncy, whimsical characters that defined the golden age of animation.</p>
+                    
+                    <p>"It's absolutely the bee's knees!" exclaimed local animation enthusiast Penelope Inkwell. "There's something magical about those stretchy limbs and impossible physics that just makes you want to dance!"</p>
+                    
+                    <p>The revival has sparked a nationwide dance craze, with the "Rubber Hose Shuffle" becoming the most popular dance at speakeasies and soda fountains alike.</p>
                 </div>
             </article>
 
-            <!-- Main Story -->
-            <article class="newspaper-article newspaper-article--main">
+            <!-- Secondary Story -->
+            <article class="newspaper-article newspaper-article--secondary">
                 <header class="article-header">
-                    <h2 id="main-article-title" class="article-title">THE GOLDEN AGE OF ANIMATION LIVES ON!</h2>
-                    <div id="main-article-byline" class="article-byline">By our art critic • Today</div>
+                    <h2 id="secondary-article-title" class="article-title">JAZZ ORCHESTRA CAUSES CITYWIDE WIGGLE EPIDEMIC!</h2>
+                    <div id="secondary-article-byline" class="article-byline">By our music critic • Today</div>
                 </header>
                 
-                <div class="features">
-                    <div id="main-article-content" class="features__content">
-                        <p>With its authentic visual aesthetic from the early days of animation history, this new work has successfully captured the very essence of that golden era. The art of "rubber hose" will delight you with its classic action rhythm, focused primarily on epic battles.</p>
-                        
-                        <div class="cards__list">
-                            <div class="cards__card">
-                                <img src="img/feat-1.svg" alt="Traditional animation techniques">
-                                <h3>Vintage Techniques</h3>
-                                <p>Hand-drawn traditional animation, watercolor backgrounds, and original jazz recordings.</p>
-                            </div>
-                            <div class="cards__card">
-                                <img src="img/feat-2.svg" alt="Family entertainment">
-                                <h3>Family Fun</h3>
-                                <p>Discover strange worlds solo or in local co-op with your loved ones.</p>
-                            </div>
-                            <div class="cards__card">
-                                <img src="img/feat-3.svg" alt="Stimulating challenge">
-                                <h3>Thrilling Challenge</h3>
-                                <p>Total immersion in a world frozen in time with stimulating challenges.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div id="secondary-article-content" class="article-content">
+                    <p>The Shimmy & Shake Jazz Orchestra's latest performance has had an unexpected side effect: the entire city can't stop wiggling! Medical experts are baffled but delighted by this musical phenomenon.</p>
+                    
+                    <p>Dr. Melody Jazzworth of the Institute of Musical Medicine reports, "It appears the syncopated rhythms have triggered an involuntary but joyful response in the population. Patients are arriving at the hospital dancing!"</p>
                 </div>
             </article>
 
-            <!-- Photo Gallery -->
-            <article class="newspaper-article newspaper-article--gallery">
+            <!-- Third Story -->
+            <article class="newspaper-article newspaper-article--third">
                 <header class="article-header">
-                    <h2 class="article-title">PHOTO ALBUM</h2>
-                    <div class="article-byline">Exclusive shots from our photographers</div>
+                    <h2 id="third-article-title" class="article-title">MYSTERIOUS BANANA BANDIT STRIKES AGAIN!</h2>
+                    <div id="third-article-byline" class="article-byline">By our crime correspondent • Today</div>
                 </header>
                 
-                <div class="gallery">
-                    <ul class="gallery__grid" role="tablist">
-                        <li class="gallery__img gallery__img--pos1" role="tab"><img src="img/gal-1.jpg" alt="Character driving an apple-shaped car"></li>
-                        <li class="gallery__img gallery__img--pos2" role="tab"><img src="img/gal-2.jpg" alt="Fish in water proudly emerging from its house"></li>
-                        <li class="gallery__img gallery__img--pos3" role="tab"><img src="img/gal-3.jpg" alt="Peanut dancing and singing on stage"></li>
-                        <li class="gallery__img gallery__img--pos4" role="tab"><img src="img/gal-4.jpg" alt="The devil reaching out to the main characters"></li>
-                        <li class="gallery__img gallery__img--pos5" role="tab"><img src="img/gal-5.jpg" alt="Evil character playing a musical instrument"></li>
-                        <li class="gallery__img gallery__img--pos6" role="tab"><img src="img/gal-6.jpg" alt="Menacing flower attacking our heroes"></li>
-                    </ul>
+                <div id="third-article-content" class="article-content">
+                    <p>The elusive Banana Bandit has struck again, this time making off with an entire shipment of premium bananas from the downtown fruit market. Witnesses report seeing a figure swinging from building to building with suspicious agility.</p>
+                    
+                    <p>"All that was left were perfectly arranged banana peels and a note that simply said 'Thanks for the potassium!'" reported Officer Constable Fruitbottom.</p>
+                </div>
+            </article>
+
+            <!-- Fourth Story -->
+            <article class="newspaper-article newspaper-article--fourth">
+                <header class="article-header">
+                    <h2 id="fourth-article-title" class="article-title">CLOUD CUCKOO LAND EXPRESS ANNOUNCES NEW ROUTE!</h2>
+                    <div id="fourth-article-byline" class="article-byline">By our travel correspondent • Today</div>
+                </header>
+                
+                <div id="fourth-article-content" class="article-content">
+                    <p>The whimsical Cloud Cuckoo Land Express has announced a new route through the Marshmallow Mountains, complete with stops at Jellybean Junction and Gigglesnort Grove.</p>
+                    
+                    <p>Conductor Toot-Toot McGillicuddy promises passengers "a journey so delightful, you'll forget which way is up!" Tickets are now available at all major daydream stations.</p>
+                </div>
+            </article>
+
+            <!-- Fifth Story -->
+            <article class="newspaper-article newspaper-article--fifth">
+                <header class="article-header">
+                    <h2 id="fifth-article-title" class="article-title">DANCING CATS FORM PROFESSIONAL TROUPE!</h2>
+                    <div id="fifth-article-byline" class="article-byline">By our animal correspondent • Today</div>
+                </header>
+                
+                <div id="fifth-article-content" class="article-content">
+                    <p>The tap-dancing cats that have been entertaining rooftop audiences have officially formed "The Feline Fancy Feet Company." Their debut performance at the Grand Theater sold out in minutes!</p>
+                    
+                    <p>Lead dancer Mr. Whiskers (formerly of Elm Street) stated through his translator, "Meow meow purr," which roughly translates to "We're just getting started!"</p>
+                </div>
+            </article>
+
+            <!-- Sixth Story -->
+            <article class="newspaper-article newspaper-article--sixth">
+                <header class="article-header">
+                    <h2 id="sixth-article-title" class="article-title">SELF-STIRRING SOUP SPOON WINS INVENTION AWARD!</h2>
+                    <div id="sixth-article-byline" class="article-byline">By our innovation reporter • Today</div>
+                </header>
+                
+                <div id="sixth-article-content" class="article-content">
+                    <p>Professor Gadgetbottom's revolutionary Self-Stirring Soup Spoon has been awarded the prestigious "Gadget of the Year" award by the Society of Peculiar Inventions.</p>
+                    
+                    <p>The spoon, which plays a cheerful tune while stirring, has reportedly improved soup satisfaction by 73% citywide. "It's the cat's pajamas!" declared soup enthusiast Mabel Brothsworth.</p>
                 </div>
             </article>
 

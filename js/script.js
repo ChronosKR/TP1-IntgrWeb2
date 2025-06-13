@@ -13,15 +13,88 @@ const email = document.getElementById('email');
 const message = document.getElementById('message');
 const newsletterEmail = document.getElementById('newsletter-email');
 
+// Music control functionality
+let isPlaying = false;
+const musicToggle = document.getElementById('music-toggle');
+const backgroundMusic = document.getElementById('background-music');
+
+function initializeMusic() {
+    if (musicToggle && backgroundMusic) {
+        // Set volume to a comfortable level
+        backgroundMusic.volume = 0.3;
+        
+        musicToggle.addEventListener('click', toggleMusic);
+        
+        // Auto-play attempt (may be blocked by browser)
+        backgroundMusic.play().then(() => {
+            isPlaying = true;
+            updateMusicButton();
+        }).catch(() => {
+            // Auto-play blocked, user will need to click
+            isPlaying = false;
+            updateMusicButton();
+        });
+    }
+}
+
+function toggleMusic() {
+    if (isPlaying) {
+        backgroundMusic.pause();
+        isPlaying = false;
+    } else {
+        backgroundMusic.play();
+        isPlaying = true;
+    }
+    updateMusicButton();
+}
+
+function updateMusicButton() {
+    if (musicToggle) {
+        musicToggle.textContent = isPlaying ? '🔊' : '🔇';
+        musicToggle.setAttribute('aria-label', isPlaying ? 'Pause background music' : 'Play background music');
+    }
+}
+
 // Dynamic content loading function
 function loadDynamicContent(section = 'news') {
     const breakingNewsElement = document.getElementById('breaking-news-text');
-    const mainTitleElement = document.getElementById('main-article-title');
-    const mainBylineElement = document.getElementById('main-article-byline');
-    const mainContentElement = document.getElementById('main-article-content');
     
-    if (!breakingNewsElement || !mainTitleElement || !mainBylineElement || !mainContentElement) {
-        console.warn('Some content elements not found');
+    // Get all article elements
+    const articles = [
+        {
+            title: document.getElementById('featured-article-title'),
+            byline: document.getElementById('featured-article-byline'),
+            content: document.getElementById('featured-article-content')
+        },
+        {
+            title: document.getElementById('secondary-article-title'),
+            byline: document.getElementById('secondary-article-byline'),
+            content: document.getElementById('secondary-article-content')
+        },
+        {
+            title: document.getElementById('third-article-title'),
+            byline: document.getElementById('third-article-byline'),
+            content: document.getElementById('third-article-content')
+        },
+        {
+            title: document.getElementById('fourth-article-title'),
+            byline: document.getElementById('fourth-article-byline'),
+            content: document.getElementById('fourth-article-content')
+        },
+        {
+            title: document.getElementById('fifth-article-title'),
+            byline: document.getElementById('fifth-article-byline'),
+            content: document.getElementById('fifth-article-content')
+        },
+        {
+            title: document.getElementById('sixth-article-title'),
+            byline: document.getElementById('sixth-article-byline'),
+            content: document.getElementById('sixth-article-content')
+        }
+    ];
+    
+    if (!breakingNewsElement) {
+        console.warn('Breaking news element not found');
         return;
     }
 
@@ -41,11 +114,17 @@ function loadDynamicContent(section = 'news') {
     const randomNews = newsSnippets[Math.floor(Math.random() * newsSnippets.length)];
     breakingNewsElement.textContent = randomNews;
 
-    // Update main article
-    const randomArticle = mainArticles[Math.floor(Math.random() * mainArticles.length)];
-    mainTitleElement.textContent = randomArticle.title;
-    mainBylineElement.textContent = randomArticle.byline;
-    mainContentElement.innerHTML = randomArticle.content;
+    // Update all articles with random content
+    const shuffledArticles = [...mainArticles].sort(() => Math.random() - 0.5);
+    
+    articles.forEach((articleElements, index) => {
+        if (articleElements.title && articleElements.byline && articleElements.content && shuffledArticles[index]) {
+            const article = shuffledArticles[index];
+            articleElements.title.textContent = article.title;
+            articleElements.byline.textContent = article.byline;
+            articleElements.content.innerHTML = article.content;
+        }
+    });
 }
 
 // Content loading function for navigation
@@ -201,6 +280,7 @@ if (nav) {
 
 // Load initial content when page loads
 document.addEventListener('DOMContentLoaded', () => {
+    initializeMusic();
     loadDynamicContent('news');
 });
 
