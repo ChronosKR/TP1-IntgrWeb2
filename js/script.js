@@ -1,5 +1,5 @@
 // Import article data
-import { mainArticles, breakingNewsSnippets, entertainmentSnippets, chronicleSnippets } from './articles.js';
+import { mainArticles, breakingNewsSnippets, entertainmentSnippets, chronicleSnippets, editorialProfiles } from './articles.js';
 
 const menuItems = document.querySelectorAll('.nav a');
 const burger = document.querySelector(".nav__burger");
@@ -53,6 +53,32 @@ function updateMusicButton() {
         musicToggle.textContent = isPlaying ? '🔊' : '🔇';
         musicToggle.setAttribute('aria-label', isPlaying ? 'Pause background music' : 'Play background music');
     }
+}
+
+// Editorial profiles rendering function
+function renderEditorialProfiles() {
+    const profilesGrid = document.getElementById('profiles-grid');
+    if (!profilesGrid) return;
+    
+    profilesGrid.innerHTML = '';
+    
+    editorialProfiles.forEach(profile => {
+        const profileCard = document.createElement('div');
+        profileCard.className = 'profile-card';
+        
+        profileCard.innerHTML = `
+            <div class="profile-image">
+                <img src="${profile.image}" alt="${profile.name}" class="profile-icon">
+            </div>
+            <div class="profile-content">
+                <h3 class="profile-name">${profile.name}</h3>
+                <h4 class="profile-title">${profile.title}</h4>
+                <p class="profile-description">${profile.description}</p>
+            </div>
+        `;
+        
+        profilesGrid.appendChild(profileCard);
+    });
 }
 
 // Dynamic content loading function
@@ -139,8 +165,25 @@ function loadContent(section) {
         activeTab.parentElement.classList.add('nav--active');
     }
     
-    // Load new content
-    loadDynamicContent(section);
+    // Get containers
+    const newspaperGrid = document.getElementById('newspaper-grid');
+    const editorialContainer = document.getElementById('editorial-profiles-container');
+    
+    if (section === 'editorial') {
+        // Show editorial profiles, hide main grid
+        if (newspaperGrid) newspaperGrid.style.display = 'none';
+        if (editorialContainer) {
+            editorialContainer.style.display = 'block';
+            renderEditorialProfiles();
+        }
+    } else {
+        // Show main grid, hide editorial profiles
+        if (editorialContainer) editorialContainer.style.display = 'none';
+        if (newspaperGrid) newspaperGrid.style.display = 'grid';
+        
+        // Load new content for other sections
+        loadDynamicContent(section);
+    }
     
     // Close mobile menu if open
     if (nav.classList.contains('active')) {

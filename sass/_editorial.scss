@@ -1,0 +1,195 @@
+@use './theme/colors';
+@use './theme/fonts';
+@use './theme/fx';
+@use './theme/mixins';
+
+.editorial-profiles-container {
+    padding: 2rem 0;
+}
+
+.editorial-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 0.3rem double colors.$ink;
+    
+    .editorial-title {
+        font-family: fonts.$tonic;
+        font-size: 2.5rem;
+        font-weight: fonts.$ultra;
+        color: colors.$ink;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        margin-bottom: 1rem;
+        text-shadow: 0.2rem 0.2rem 0 colors.$yellow;
+    }
+    
+    .editorial-subtitle {
+        font-family: fonts.$sub;
+        font-size: 1.2rem;
+        color: colors.$ink-faded;
+        font-style: italic;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+    }
+}
+
+.profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.profile-card {
+    background-color: colors.$white;
+    border: 0.2rem solid colors.$ink;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0.3rem 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: -0.1rem;
+        left: -0.1rem;
+        right: -0.1rem;
+        bottom: -0.1rem;
+        background: linear-gradient(45deg, colors.$yellow, colors.$sky, colors.$mint, colors.$purple);
+        border-radius: 1rem;
+        z-index: -1;
+        opacity: 0.3;
+    }
+    
+    &:hover {
+        transform: translateY(-0.3rem);
+        box-shadow: 0.5rem 0.5rem 1.2rem rgba(0, 0, 0, 0.2);
+        
+        .profile-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+    }
+}
+
+.profile-image {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    
+    .profile-icon {
+        width: 4rem;
+        height: 4rem;
+        transition: all 0.3s ease;
+        filter: drop-shadow(0.2rem 0.2rem 0.4rem rgba(0, 0, 0, 0.3));
+    }
+}
+
+.profile-content {
+    text-align: center;
+    
+    .profile-name {
+        font-family: fonts.$tonic;
+        font-size: 1.4rem;
+        font-weight: fonts.$ultra;
+        color: colors.$ink;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+    }
+    
+    .profile-title {
+        font-family: fonts.$h;
+        font-size: 1rem;
+        font-weight: fonts.$bold;
+        color: colors.$yellow;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        background-color: colors.$ink;
+        padding: 0.3rem 0.8rem;
+        border-radius: 0.3rem;
+        display: inline-block;
+    }
+    
+    .profile-description {
+        font-family: fonts.$p;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: colors.$ink;
+        text-align: justify;
+        hyphens: auto;
+    }
+}
+
+// Article inline icons
+.article-inline-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+    margin: 0 0.3rem;
+    vertical-align: middle;
+    filter: sepia(20%) saturate(80%) brightness(1.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.2) rotate(10deg);
+        filter: sepia(50%) saturate(120%) brightness(1.2);
+    }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 768px) {
+    .editorial-header {
+        .editorial-title {
+            font-size: 2rem;
+        }
+        
+        .editorial-subtitle {
+            font-size: 1rem;
+        }
+    }
+    
+    .profiles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .profile-card {
+        padding: 1.5rem;
+    }
+    
+    .article-inline-icon {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .editorial-header {
+        margin-bottom: 2rem;
+        
+        .editorial-title {
+            font-size: 1.5rem;
+        }
+    }
+    
+    .profile-card {
+        padding: 1rem;
+    }
+    
+    .profile-content {
+        .profile-name {
+            font-size: 1.2rem;
+        }
+        
+        .profile-title {
+            font-size: 0.9rem;
+        }
+        
+        .profile-description {
+            font-size: 0.8rem;
+        }
+    }
+}

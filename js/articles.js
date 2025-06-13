@@ -4,55 +4,55 @@ export const mainArticles = [
         title: "MYSTERIOUS BANANA BANDIT BAFFLES AUTHORITIES!",
         byline: "By our ace reporter, Penny Pumpernickel • Today",
         content: `
-            <p>Inkwell Isle is in an uproar as bananas continue to vanish from fruit stands across town! Witnesses report seeing a shadowy figure with suspiciously long arms swinging from lamppost to lamppost, but authorities remain stumped.</p>
+            <p><img src="img/nav-1.svg" alt="Reporter icon" class="article-inline-icon">Inkwell Isle is in an uproar as bananas continue to vanish from fruit stands across town! Witnesses report seeing a shadowy figure with suspiciously long arms swinging from lamppost to lamppost, but authorities remain stumped.</p>
             
             <p>"It's the most peculiar case I've seen in my 30 years on the force," declared Chief Inspector Gadget-Arms, adjusting his monocle. "The thief leaves behind only banana peels arranged in perfect spirals. It's either a master criminal or someone with an unusual sense of humor!"</p>
             
-            <p>Local fruit vendor Cornelius Cornucopia reported losing 47 bananas in a single night. "They took only the ripest ones," he lamented, "leaving behind a tiny thank-you note written in what appears to be monkey script."</p>
+            <p>Local fruit vendor Cornelius Cornucopia reported losing 47 bananas in a single night. <img src="img/nav-2.svg" alt="Vendor icon" class="article-inline-icon">"They took only the ripest ones," he lamented, "leaving behind a tiny thank-you note written in what appears to be monkey script."</p>
         `
     },
     {
         title: "CLOUD CUCKOO LAND EXPRESS NOW BOARDING!",
         byline: "By our sky-high correspondent, Amelia Airheart • Today",
         content: `
-            <p>All aboard for the most whimsical journey of your lifetime! The Shimmy & Shake Railroad proudly announces its new express line to the mystical Cloud Cuckoo Land, where dreams come true and gravity is merely a suggestion.</p>
+            <p><img src="img/nav-3.svg" alt="Travel icon" class="article-inline-icon">All aboard for the most whimsical journey of your lifetime! The Shimmy & Shake Railroad proudly announces its new express line to the mystical Cloud Cuckoo Land, where dreams come true and gravity is merely a suggestion.</p>
             
             <p>The inaugural journey promises passengers a delightful ride through cotton candy clouds, with scheduled stops at Jellybean Junction and Marshmallow Meadows. Conductor Toot-Toot McGillicuddy assures travelers that delays are impossible, as the train runs on pure imagination.</p>
             
-            <p>"We've installed special umbrella holders for the inevitable marshmallow showers," explained Chief Engineer Whistlebottom. "And our dining car serves only foods that change color when you're not looking!"</p>
+            <p><img src="img/nav-4.svg" alt="Engineer icon" class="article-inline-icon">"We've installed special umbrella holders for the inevitable marshmallow showers," explained Chief Engineer Whistlebottom. "And our dining car serves only foods that change color when you're not looking!"</p>
         `
     },
     {
         title: "DANCING CAT PHENOMENON SWEEPS THE CITY!",
         byline: "By our feline correspondent, Whiskers McReporter • Today",
         content: `
-            <p>Citizens are reporting an extraordinary sight: cats across the city have spontaneously begun tap-dancing on rooftops! The phenomenon started last Tuesday when Mrs. Mittens, a tabby from Elm Street, was spotted performing a perfect shuffle-ball-change.</p>
+            <p>Citizens are reporting an extraordinary sight: cats across the city have spontaneously begun tap-dancing on rooftops! <img src="img/nav-1.svg" alt="Cat icon" class="article-inline-icon">The phenomenon started last Tuesday when Mrs. Mittens, a tabby from Elm Street, was spotted performing a perfect shuffle-ball-change.</p>
             
             <p>Professor Pawsworth from the Institute of Peculiar Animal Behavior believes the cats may have been inspired by the city's new jazz orchestra. "It appears they've developed an appreciation for syncopated rhythms," he explained while his own cat, Mr. Whiskers, demonstrated a flawless time step.</p>
             
-            <p>The Mayor has declared next week "Feline Fancy Feet Week" and is organizing a city-wide cat dance competition. Prize: a year's supply of premium tuna and tiny tap shoes.</p>
+            <p><img src="img/nav-3.svg" alt="Performance icon" class="article-inline-icon">The Mayor has declared next week "Feline Fancy Feet Week" and is organizing a city-wide cat dance competition. Prize: a year's supply of premium tuna and tiny tap shoes.</p>
         `
     },
     {
         title: "RUBBER DUCK ARMADA SPOTTED ON RIVER!",
         byline: "By our nautical correspondent, Captain Squeaky • Today",
         content: `
-            <p>A flotilla of giant rubber ducks has been seen floating majestically down the Shimmy River, causing quite the quack-up among local residents! The ducks, each standing 10 feet tall, appear to be on a mission of utmost importance.</p>
+            <p>A flotilla of giant rubber ducks has been seen floating majestically down the Shimmy River, causing quite the quack-up among local residents! <img src="img/nav-2.svg" alt="Duck icon" class="article-inline-icon">The ducks, each standing 10 feet tall, appear to be on a mission of utmost importance.</p>
             
             <p>Harbor Master Bubbleton reported that the ducks are traveling in perfect formation, occasionally stopping to perform synchronized swimming routines. "They seem to be following an ancient duck migration pattern," he noted, "though I've never seen rubber ducks migrate before."</p>
             
-            <p>Local children have taken to the riverbanks with homemade periscopes, hoping to catch a glimpse of the mysterious Duck Admiral rumored to be leading the expedition. The Mayor has declared the river a "Quack Zone" until further notice.</p>
+            <p>Local children have taken to the riverbanks with homemade periscopes, hoping to catch a glimpse of the mysterious Duck Admiral rumored to be leading the expedition. <img src="img/nav-4.svg" alt="Admiral icon" class="article-inline-icon">The Mayor has declared the river a "Quack Zone" until further notice.</p>
         `
     },
     {
         title: "SELF-STIRRING SOUP SPOON REVOLUTIONIZES DINING!",
         byline: "By our culinary correspondent, Chef Whiskerton • Today",
         content: `
-            <p>Local inventor Professor Gadgetbottom has unveiled his latest creation: the Self-Stirring Soup Spoon! This miraculous utensil promises to end the age-old struggle of manual soup stirring forever.</p>
+            <p><img src="img/nav-1.svg" alt="Inventor icon" class="article-inline-icon">Local inventor Professor Gadgetbottom has unveiled his latest creation: the Self-Stirring Soup Spoon! This miraculous utensil promises to end the age-old struggle of manual soup stirring forever.</p>
             
             <p>"I was tired of my soup getting cold while I stirred," explained the professor, demonstrating his invention at Mabel's Soup Emporium. "Now the spoon does all the work while I focus on the important things, like adding the perfect amount of pepper!"</p>
             
-            <p>The spoon features a tiny wind-up mechanism and plays a cheerful tune while stirring. Early adopters report that their soup tastes 73% more delicious, though scientists are still investigating whether this is due to the stirring or the accompanying melody.</p>
+            <p>The spoon features a tiny wind-up mechanism and plays a cheerful tune while stirring. <img src="img/nav-3.svg" alt="Chef icon" class="article-inline-icon">Early adopters report that their soup tastes 73% more delicious, though scientists are still investigating whether this is due to the stirring or the accompanying melody.</p>
         `
     },
     {
@@ -61,10 +61,38 @@ export const mainArticles = [
         content: `
             <p>In a surprising announcement that has the whole city shaking with excitement, Mayor Bumblebottom has officially declared next Friday as "National Wiggle Day," encouraging all citizens to wiggle with wild abandon!</p>
             
-            <p>"In these serious times, we need more wiggling," proclaimed the Mayor while demonstrating his signature shoulder shimmy. "Wiggling brings joy, promotes good circulation, and confuses our enemies!"</p>
+            <p><img src="img/nav-4.svg" alt="Mayor icon" class="article-inline-icon">"In these serious times, we need more wiggling," proclaimed the Mayor while demonstrating his signature shoulder shimmy. "Wiggling brings joy, promotes good circulation, and confuses our enemies!"</p>
             
-            <p>The city has organized wiggle workshops, wiggle parades, and even a "Wiggle-Off" competition in the town square. Local wiggle expert Professor Jiggleheimer will judge the contest, looking for creativity, enthusiasm, and proper wiggle technique.</p>
+            <p>The city has organized wiggle workshops, wiggle parades, and even a "Wiggle-Off" competition in the town square. <img src="img/nav-2.svg" alt="Judge icon" class="article-inline-icon">Local wiggle expert Professor Jiggleheimer will judge the contest, looking for creativity, enthusiasm, and proper wiggle technique.</p>
         `
+    }
+];
+
+// Editorial team profiles using navigation icons
+export const editorialProfiles = [
+    {
+        name: "Cuphead McGillicuddy",
+        title: "Editor-in-Chief",
+        image: "img/nav-1.svg",
+        description: "A spirited leader with a head full of ideas and a heart full of jazz! Cuphead brings boundless energy to every story, ensuring our readers get the most exciting news this side of Inkwell Isle. When he's not chasing scoops, he's perfecting his rubber hose dance moves."
+    },
+    {
+        name: "Mugman Brewster",
+        title: "Senior Correspondent",
+        image: "img/nav-2.svg",
+        description: "The thoughtful brother of our Editor-in-Chief, Mugman brings careful consideration and fact-checking prowess to every article. His steady hand and keen eye for detail ensure that every story is as smooth as his perfectly polished surface. Specializes in investigative journalism and banana-related crimes."
+    },
+    {
+        name: "Ms. Chalice Sparklebottom",
+        title: "Entertainment Editor",
+        image: "img/nav-3.svg",
+        description: "The newest addition to our team brings a golden touch to all things entertainment! Ms. Chalice covers the hottest dance crazes, the swingingest jazz clubs, and the most spectacular vaudeville acts. Her infectious enthusiasm makes every story shimmer with excitement."
+    },
+    {
+        name: "Devil Mephistopheles",
+        title: "Opinion Columnist",
+        image: "img/nav-4.svg",
+        description: "Our most controversial writer, Devil brings a devilishly clever perspective to current events. Despite his intimidating appearance, he's actually quite charming and writes the most popular advice column in the city: 'Dear Devil: Life's Little Dilemmas.' Known for his surprisingly wholesome life tips."
     }
 ];
 
