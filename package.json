@@ -1,18 +1,20 @@
 {
-  "name": "cuphead-website",
+  "name": "shimmy-shake-gazette",
   "version": "1.0.0",
-  "description": "Cuphead game website with SCSS compilation",
+  "description": "The Daily Shimmy & Shake Gazette - A whimsical 1930s-style newspaper website",
   "main": "index.html",
   "scripts": {
-    "dev": "live-server --port=3000",
-    "build": "sass sass:style/css",
-    "start": "npm run build && live-server --port=3000"
+    "dev": "npm run build:css && live-server --port=3000",
+    "build:css": "sass sass:style/css --style=compressed",
+    "build": "npm run build:css && mkdir -p dist && cp -r *.html img js style dist/",
+    "start": "npm run build && live-server --port=3000 --open=dist",
+    "watch:css": "sass sass:style/css --watch"
   },
   "devDependencies": {
     "sass": "^1.69.5",
     "live-server": "^1.2.2"
   },
-  "keywords": ["cuphead", "website", "scss", "html"],
-  "author": "Anthony Lemay",
+  "keywords": ["newspaper", "1930s", "animation", "rubber-hose", "website"],
+  "author": "Jin Park",
   "license": "MIT"
 }
