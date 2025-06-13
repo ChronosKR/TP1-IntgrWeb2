@@ -117,13 +117,35 @@ p {
 .nav__logo {
   min-width: 15%;
 }
+.nav__logo span {
+  font-family: "paroli", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-shadow: 0.1rem 0.1rem 0 #EEC732;
+  transition: all 0.3s ease;
+}
 .nav__logo:hover {
   transform: scale(1.05);
-  filter: drop-shadow(0.5rem 0.5rem #000000);
+}
+.nav__logo:hover span {
+  color: #EEC732;
+  text-shadow: 0.1rem 0.1rem 0 #1a1a1a;
 }
 .nav__logo--burger {
   display: none;
   margin: auto;
+}
+.nav__logo--burger span {
+  font-family: "paroli", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-shadow: 0.1rem 0.1rem 0 #EEC732;
 }
 .nav--active {
   border-bottom: 0.2rem solid #1a1a1a;
@@ -1591,13 +1613,19 @@ label {
   justify-content: center;
   align-items: flex-start;
 }
-.footer__logo img {
-  max-width: 8rem;
-  filter: brightness(0) invert(1);
+.footer__logo span {
+  font-family: "paroli", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #f7f7f7;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  text-shadow: 0.1rem 0.1rem 0 #EEC732;
   transition: all 0.3s ease;
 }
-.footer__logo img:hover {
-  filter: brightness(0) invert(1) sepia(100%) saturate(1000%) hue-rotate(35deg);
+.footer__logo:hover span {
+  color: #EEC732;
+  text-shadow: 0.1rem 0.1rem 0 #f7f7f7;
   transform: scale(1.05);
 }
 
