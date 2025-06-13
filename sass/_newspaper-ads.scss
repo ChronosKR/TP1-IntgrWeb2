@@ -3,15 +3,16 @@
 @use './theme/fx';
 @use './theme/mixins';
 
-// Absolutely positioned ads that stay in place relative to body
+// Fixed positioned ads that stay in place relative to viewport
 .filler-ads {
-    position: absolute;
+    position: fixed;
     top: 0;
-    width: 12rem;
+    width: 15rem; // Increased width for better readability
     height: 100vh;
     z-index: 5;
     overflow-y: auto;
     padding: 1rem;
+    background-color: rgba(250, 248, 243, 0.95); // Semi-transparent background
     
     &--left {
         left: 0;
@@ -27,25 +28,25 @@
     background-color: colors.$paper-aged;
     border: 0.2rem solid colors.$ink;
     border-radius: 0.5rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: 1.2rem; // Increased padding
+    margin-bottom: 1.5rem; // Increased margin
     box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-    font-size: 0.8rem;
-    line-height: 1.3;
+    font-size: 1rem; // Increased base font size
+    line-height: 1.4;
     
     &__graphic {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 3rem;
-        margin-bottom: 0.5rem;
+        height: 4rem; // Increased height
+        margin-bottom: 0.8rem;
         background-color: colors.$white;
         border: 0.2rem solid colors.$ink;
         border-radius: 0.3rem;
         
         .graphic-icon {
-            width: 2rem;
-            height: 2rem;
+            width: 2.5rem; // Increased size
+            height: 2.5rem;
             background-color: colors.$ink;
             border-radius: 50%;
             position: relative;
@@ -72,19 +73,20 @@
     
     &__text {
         font-family: fonts.$p;
-        font-size: 0.7rem;
+        font-size: 0.9rem; // Increased font size
         color: colors.$ink;
         text-align: center;
-        line-height: 1.3;
+        line-height: 1.4;
         font-weight: fonts.$bold;
+        margin-bottom: 0.5rem;
     }
     
     &__price {
         font-family: fonts.$tonic;
-        font-size: 0.9rem;
+        font-size: 1.1rem; // Increased font size
         color: colors.$red;
         text-align: center;
-        margin-top: 0.3rem;
+        margin-top: 0.5rem;
         font-weight: fonts.$ultra;
         text-transform: uppercase;
     }
@@ -95,26 +97,26 @@
     background-color: colors.$paper;
     border: 0.2rem solid colors.$ink;
     border-radius: 0.5rem;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    padding: 1.2rem; // Increased padding
+    margin-bottom: 1.5rem;
     
     &__header {
         font-family: fonts.$tonic;
-        font-size: 0.9rem;
+        font-size: 1rem; // Increased font size
         font-weight: fonts.$ultra;
         text-transform: uppercase;
         text-align: center;
-        margin-bottom: 0.5rem;
-        padding-bottom: 0.3rem;
+        margin-bottom: 0.8rem;
+        padding-bottom: 0.5rem;
         border-bottom: 0.2rem solid colors.$ink;
         letter-spacing: 0.05rem;
     }
     
     &__item {
         font-family: fonts.$p;
-        font-size: 0.65rem;
-        line-height: 1.4;
-        margin-bottom: 0.5rem;
+        font-size: 0.8rem; // Increased font size
+        line-height: 1.5;
+        margin-bottom: 0.8rem;
         color: colors.$ink;
         text-align: justify;
         hyphens: auto;
@@ -135,8 +137,8 @@
     background-color: colors.$yellow;
     border: 0.3rem solid colors.$ink;
     border-radius: 50%;
-    padding: 0.8rem;
-    margin: 1rem 0;
+    padding: 1rem; // Increased padding
+    margin: 1.5rem 0;
     text-align: center;
     position: relative;
     box-shadow: 0.3rem 0.3rem 0.6rem rgba(0, 0, 0, 0.2);
@@ -144,16 +146,16 @@
     &::before {
         content: '★';
         position: absolute;
-        top: -0.4rem;
+        top: -0.5rem;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 1.2rem;
+        font-size: 1.4rem; // Increased size
         color: colors.$red;
         background-color: colors.$white;
         border: 0.2rem solid colors.$ink;
         border-radius: 50%;
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 1.8rem; // Increased size
+        height: 1.8rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -161,28 +163,23 @@
     
     &__text {
         font-family: fonts.$tonic;
-        font-size: 0.6rem;
+        font-size: 0.8rem; // Increased font size
         color: colors.$ink;
         text-transform: uppercase;
         font-weight: fonts.$ultra;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.3rem;
     }
     
     &__price {
         font-family: fonts.$tonic;
-        font-size: 1rem;
+        font-size: 1.2rem; // Increased font size
         color: colors.$red;
         font-weight: fonts.$ultra;
         text-transform: uppercase;
     }
 }
 
-// Ensure body has relative positioning to establish positioning context
-body {
-    position: relative;
-}
-
-// Show ads only on very wide screens (1920px qualifies)
+// Show ads only on very wide screens
 @media screen and (min-width: 1600px) {
     .filler-ads {
         display: block;
@@ -190,7 +187,7 @@ body {
     
     // Add margin to main content to avoid overlap
     .newspaper-content-wrapper {
-        margin: 0 13rem;
+        margin: 0 16rem; // Increased margin to match new width
     }
 }
 
