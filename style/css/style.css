@@ -91,7 +91,7 @@ p {
   border-bottom: 0.2rem solid #1a1a1a;
   padding: 1rem 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background: linear-gradient(90deg, #faf8f3 0%, #f5f2e8 50%, #faf8f3 100%);
 }

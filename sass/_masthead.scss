@@ -65,7 +65,7 @@
         border-bottom: 0.2rem solid colors.$ink;
         padding: 1rem 0;
         display: flex;
-        justify-content: space-between;
+        justify-content: center; // Center the navigation
         align-items: center;
         background: linear-gradient(90deg, 
             colors.$paper 0%, 

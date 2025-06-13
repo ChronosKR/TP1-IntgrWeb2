@@ -12,64 +12,72 @@
     <link rel="stylesheet" href="./style/css/normalize.css">
     <link rel="stylesheet" href="https://use.typekit.net/rgr6nmb.css">
     <script src="./js/script.js" defer></script>
+    <script src="./js/articles.js" defer></script>
 </head>
 
 <body>
 <a class="screen-reader-text" href="#content" tabindex="1">Skip to main content</a>
 
-<!-- Newspaper Masthead -->
-<header class="masthead">
-    <div class="masthead__container container">
-        <div class="masthead__top">
-            <div class="masthead__date">Vol. 1 • No. 1 • Special Edition</div>
-            <div class="masthead__weather">☀️ Sunny • 72°F</div>
-        </div>
-        
-        <div class="masthead__title">
-            <h1>THE DAILY SHIMMY & SHAKE GAZETTE</h1>
-            <div class="masthead__subtitle">Animated Rubber Hose Nostalgia • Since 1930</div>
-        </div>
-        
-        <nav id="menu" class="masthead__nav">
-            <div class="nav__logo">
-                <a id="logo" href="index.html"><span>THE GAZETTE</span></a>
-            </div>
-            <div class="nav" role="navigation" aria-label="Website navigation menu">
-                <a id="logo-burger" class="nav__logo--burger" href="index.html"><span>THE GAZETTE</span></a>
-                <ul class="nav__list" role=tablist>
-                    <li class="nav__item nav--active" role="tab">
-                        <a href="index.html" class="" id="news-tab" role="tab" aria-selected="true">
-                            <img src="img/nav-1.svg" alt="Cuphead character icon">News
-                        </a>
-                    </li>
-                    <li class="nav__item" role="tab">
-                        <a href="index.html" class="nav__link" id="chronicles" role="tab" aria-selected="false">
-                            <img src="img/nav-2.svg" alt="Mugman character icon">Chronicles
-                        </a>
-                    </li>
-                    <li class="nav__item" role="tab">
-                        <a href="index.html" class="nav__link" id="entertainment" role="tab" aria-selected="false">
-                            <img src="img/nav-3.svg" alt="Ms. Chalice character icon">Entertainment
-                        </a>
-                    </li>
-                    <li class="nav__item" role="tab">
-                        <a href="index.html" class="nav__link" id="editorial" role="tab" aria-selected="false">
-                            <img src="img/nav-4.svg" alt="Devil character icon">Editorial
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div id="burger" tabindex="1" class="nav__burger" role="button" aria-label="Menu toggle button">
-                <span class="nav__burger__bar"></span>
-                <span class="nav__burger__bar"></span>
-                <span class="nav__burger__bar"></span>
-            </div>
-        </nav>
-    </div>
-</header>
-
 <!-- Newspaper Content Wrapper -->
 <div class="newspaper-content-wrapper">
+    <!-- Animated Character -->
+    <div class="animated-character-container">
+        <div class="character-bubble">
+            <p>🎵 Shimmy & Shake! 🎵</p>
+        </div>
+        <div class="character-placeholder">
+            <img src="./img/logo.svg" alt="Animated newspaper character" class="character-sprite">
+        </div>
+    </div>
+
+    <!-- Newspaper Masthead -->
+    <header class="masthead">
+        <div class="masthead__container container">
+            <div class="masthead__top">
+                <div class="masthead__date">Vol. 1 • No. 1 • Special Edition</div>
+                <div class="masthead__weather">☀️ Sunny • 72°F</div>
+            </div>
+            
+            <div class="masthead__title">
+                <h1>THE DAILY SHIMMY & SHAKE GAZETTE</h1>
+                <div class="masthead__subtitle">Animated Rubber Hose Nostalgia • Since 1930</div>
+            </div>
+            
+            <nav id="menu" class="masthead__nav">
+                <div class="nav" role="navigation" aria-label="Website navigation menu">
+                    <a id="logo-burger" class="nav__logo--burger" href="index.html"><span>THE GAZETTE</span></a>
+                    <ul class="nav__list" role=tablist>
+                        <li class="nav__item nav--active" role="tab">
+                            <a href="#" class="" id="news-tab" role="tab" aria-selected="true" onclick="loadContent('news')">
+                                <img src="img/nav-1.svg" alt="Cuphead character icon">News
+                            </a>
+                        </li>
+                        <li class="nav__item" role="tab">
+                            <a href="#" class="nav__link" id="chronicles" role="tab" aria-selected="false" onclick="loadContent('chronicles')">
+                                <img src="img/nav-2.svg" alt="Mugman character icon">Chronicles
+                            </a>
+                        </li>
+                        <li class="nav__item" role="tab">
+                            <a href="#" class="nav__link" id="entertainment" role="tab" aria-selected="false" onclick="loadContent('entertainment')">
+                                <img src="img/nav-3.svg" alt="Ms. Chalice character icon">Entertainment
+                            </a>
+                        </li>
+                        <li class="nav__item" role="tab">
+                            <a href="#" class="nav__link" id="editorial" role="tab" aria-selected="false" onclick="loadContent('editorial')">
+                                <img src="img/nav-4.svg" alt="Devil character icon">Editorial
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="burger" tabindex="1" class="nav__burger" role="button" aria-label="Menu toggle button">
+                    <span class="nav__burger__bar"></span>
+                    <span class="nav__burger__bar"></span>
+                    <span class="nav__burger__bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
     <main id="content" class="newspaper-main">
         
         <!-- Breaking News Banner -->
@@ -77,7 +85,7 @@
             <div class="container">
                 <div class="breaking-news__banner">
                     <span class="breaking-news__label">🚨 BREAKING NEWS</span>
-                    <span class="breaking-news__text">A new hero is making waves in arcade halls!</span>
+                    <span id="breaking-news-text" class="breaking-news__text">A new hero is making waves in arcade halls!</span>
                 </div>
             </div>
         </section>
@@ -124,12 +132,12 @@
             <!-- Main Story -->
             <article class="newspaper-article newspaper-article--main">
                 <header class="article-header">
-                    <h2 class="article-title">THE GOLDEN AGE OF ANIMATION LIVES ON!</h2>
-                    <div class="article-byline">By our art critic • Today</div>
+                    <h2 id="main-article-title" class="article-title">THE GOLDEN AGE OF ANIMATION LIVES ON!</h2>
+                    <div id="main-article-byline" class="article-byline">By our art critic • Today</div>
                 </header>
                 
                 <div class="features">
-                    <div class="features__content">
+                    <div id="main-article-content" class="features__content">
                         <p>With its authentic visual aesthetic from the early days of animation history, this new work has successfully captured the very essence of that golden era. The art of "rubber hose" will delight you with its classic action rhythm, focused primarily on epic battles.</p>
                         
                         <div class="cards__list">
@@ -187,9 +195,9 @@
                     <div class="footer__section">
                         <h4>Sections</h4>
                         <ul>
-                            <li><a href="index.html">News</a></li>
-                            <li><a href="index.html">Chronicles</a></li>
-                            <li><a href="index.html">Entertainment</a></li>
+                            <li><a href="#" onclick="loadContent('news')">News</a></li>
+                            <li><a href="#" onclick="loadContent('chronicles')">Chronicles</a></li>
+                            <li><a href="#" onclick="loadContent('entertainment')">Entertainment</a></li>
                         </ul>
                     </div>
                     

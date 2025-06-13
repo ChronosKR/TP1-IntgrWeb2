@@ -1,3 +1,6 @@
+// Import article data
+import { mainArticles, breakingNewsSnippets, entertainmentSnippets, chronicleSnippets } from './articles.js';
+
 const menuItems = document.querySelectorAll('.nav a');
 const burger = document.querySelector(".nav__burger");
 const nav = document.querySelector(".nav");
@@ -10,7 +13,69 @@ const email = document.getElementById('email');
 const message = document.getElementById('message');
 const newsletterEmail = document.getElementById('newsletter-email');
 
+// Dynamic content loading function
+function loadDynamicContent(section = 'news') {
+    const breakingNewsElement = document.getElementById('breaking-news-text');
+    const mainTitleElement = document.getElementById('main-article-title');
+    const mainBylineElement = document.getElementById('main-article-byline');
+    const mainContentElement = document.getElementById('main-article-content');
+    
+    if (!breakingNewsElement || !mainTitleElement || !mainBylineElement || !mainContentElement) {
+        console.warn('Some content elements not found');
+        return;
+    }
+
+    // Update breaking news
+    let newsSnippets;
+    switch(section) {
+        case 'entertainment':
+            newsSnippets = entertainmentSnippets;
+            break;
+        case 'chronicles':
+            newsSnippets = chronicleSnippets;
+            break;
+        default:
+            newsSnippets = breakingNewsSnippets;
+    }
+    
+    const randomNews = newsSnippets[Math.floor(Math.random() * newsSnippets.length)];
+    breakingNewsElement.textContent = randomNews;
+
+    // Update main article
+    const randomArticle = mainArticles[Math.floor(Math.random() * mainArticles.length)];
+    mainTitleElement.textContent = randomArticle.title;
+    mainBylineElement.textContent = randomArticle.byline;
+    mainContentElement.innerHTML = randomArticle.content;
+}
+
+// Content loading function for navigation
+function loadContent(section) {
+    // Update active navigation
+    document.querySelectorAll('.nav__item').forEach(item => {
+        item.classList.remove('nav--active');
+    });
+    
+    const activeTab = document.getElementById(section === 'news' ? 'news-tab' : section);
+    if (activeTab) {
+        activeTab.parentElement.classList.add('nav--active');
+    }
+    
+    // Load new content
+    loadDynamicContent(section);
+    
+    // Close mobile menu if open
+    if (nav.classList.contains('active')) {
+        mobileMenu();
+    }
+}
+
+// Make loadContent available globally
+window.loadContent = loadContent;
+
+// Form validation functions
 const validateContactForm = () => {
+    if (!lastName || !firstName || !email || !message) return false;
+    
     let noError = true;
     const lastNameValue = lastName.value.trim();
     const firstNameValue = firstName.value.trim();
@@ -49,7 +114,10 @@ const validateContactForm = () => {
     }
     return noError;
 }
+
 const validateNewsletterForm = () => {
+    if (!newsletterEmail) return false;
+    
     let noError = true;
     const newsletterEmailValue = newsletterEmail.value.trim();
     if (newsletterEmailValue ===''){
@@ -89,11 +157,7 @@ const validateEmail = (email) => {
     return re.test(String(email).toLowerCase());
 }
 
-
-
-/* Functions below are complementary/experimental to the project, test to be able to implement the use of "tab" inside the mobile burger menu, but it seems a bit more complex
-to make the nav inside non-"tabable" when they are outside the viewport/hidden for now. It would take a function to implement tabindex="-1" in my html structure. I will do more extensive tests later! */
-
+// Mobile menu functions
 function mobileMenu() {
     const isActive = nav.classList.contains('active');
     burger.classList.toggle('active');
@@ -125,6 +189,21 @@ function handleNavKeydown(event) {
     }
 }
 
-burger.addEventListener('click', mobileMenu);
-burger.addEventListener('keydown', handleBurgerKeydown);
-nav.addEventListener('keydown', handleNavKeydown);
+// Event listeners
+if (burger) {
+    burger.addEventListener('click', mobileMenu);
+    burger.addEventListener('keydown', handleBurgerKeydown);
+}
+
+if (nav) {
+    nav.addEventListener('keydown', handleNavKeydown);
+}
+
+// Load initial content when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    loadDynamicContent('news');
+});
+
+// Make validation functions available globally
+window.validateContactForm = validateContactForm;
+window.validateNewsletterForm = validateNewsletterForm;
