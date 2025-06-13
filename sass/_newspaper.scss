@@ -23,7 +23,7 @@
         align-items: center;
         justify-content: center;
         gap: 1rem;
-        animation: flash 2s infinite;
+        animation: pulse 2s infinite ease-in-out;
     }
     
     &__label {
@@ -46,6 +46,17 @@
     grid-template-columns: repeat(12, 1fr);
     gap: 2rem;
     margin-bottom: 3rem;
+    transition: opacity 0.5s ease, transform 0.3s ease;
+    
+    &.is-hidden {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .newspaper-article {
@@ -55,6 +66,8 @@
     padding: 1.5rem;
     box-shadow: 0.3rem 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
     position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
     
     &::before {
         content: '';
@@ -67,6 +80,16 @@
         border-radius: 0.5rem;
         z-index: -1;
         opacity: 0.3;
+        transition: opacity 0.3s ease;
+    }
+    
+    &:hover {
+        transform: translateY(-0.5rem);
+        box-shadow: 0.5rem 0.5rem 1.2rem rgba(0, 0, 0, 0.2);
+        
+        &::before {
+            opacity: 0.5;
+        }
     }
     
     &--featured {
@@ -204,6 +227,32 @@
     }
 }
 
+.editorial-profiles-container {
+    transition: opacity 0.5s ease, transform 0.3s ease;
+    
+    &.is-hidden {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Enhanced pulse animation for breaking news
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.02);
+    }
+}
+
 // Responsive grid adjustments
 @media screen and (max-width: 1200px) {
     .newspaper-grid {
@@ -289,14 +338,5 @@
         width: 2.5rem;
         height: 2.5rem;
         font-size: 1rem;
-    }
-}
-
-@keyframes flash {
-    0%, 50%, 100% {
-        opacity: 1;
-    }
-    25%, 75% {
-        opacity: 0.7;
     }
 }
