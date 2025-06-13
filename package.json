@@ -4,7 +4,7 @@
   "description": "Cuphead game website with SCSS compilation",
   "main": "index.html",
   "scripts": {
-    "dev": "sass --watch sass:style/css & live-server --port=3000",
+    "dev": "live-server --port=3000",
     "build": "sass sass:style/css",
     "start": "npm run build && live-server --port=3000"
   },
