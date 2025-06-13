@@ -21,37 +21,113 @@ const backgroundMusic = document.getElementById('background-music');
 function initializeMusic() {
     if (musicToggle && backgroundMusic) {
         // Set volume to a comfortable level
-        backgroundMusic.volume = 0.3;
+        backgroundMusic.volume = 0.2;
         
         musicToggle.addEventListener('click', toggleMusic);
         
-        // Auto-play attempt (may be blocked by browser)
-        backgroundMusic.play().then(() => {
-            isPlaying = true;
-            updateMusicButton();
-        }).catch(() => {
-            // Auto-play blocked, user will need to click
-            isPlaying = false;
-            updateMusicButton();
+        // Don't auto-play, let user click to start
+        isPlaying = false;
+        updateMusicButton();
+        
+        // Add event listeners for music events
+        backgroundMusic.addEventListener('loadstart', () => {
+            console.log('Music loading started');
+        });
+        
+        backgroundMusic.addEventListener('canplay', () => {
+            console.log('Music can start playing');
+        });
+        
+        backgroundMusic.addEventListener('error', (e) => {
+            console.log('Music error:', e);
+            // Fallback: create a simple beep sound
+            createFallbackSound();
         });
     }
 }
 
-function toggleMusic() {
-    if (isPlaying) {
-        backgroundMusic.pause();
-        isPlaying = false;
-    } else {
-        backgroundMusic.play();
-        isPlaying = true;
+function createFallbackSound() {
+    // Create a simple audio context for fallback sound
+    try {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        
+        function playNote(frequency, duration) {
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.value = frequency;
+            oscillator.type = 'sine';
+            
+            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + duration);
+        }
+        
+        // Simple melody pattern
+        const melody = [262, 294, 330, 349, 392, 440, 494, 523]; // C major scale
+        let noteIndex = 0;
+        
+        window.playFallbackMusic = function() {
+            if (isPlaying) {
+                playNote(melody[noteIndex % melody.length], 0.5);
+                noteIndex++;
+                setTimeout(window.playFallbackMusic, 600);
+            }
+        };
+        
+        console.log('Fallback audio system ready');
+    } catch (error) {
+        console.log('Audio not supported');
     }
-    updateMusicButton();
+}
+
+function toggleMusic() {
+    if (backgroundMusic.src && backgroundMusic.src !== window.location.href) {
+        // Try to play the actual audio file
+        if (isPlaying) {
+            backgroundMusic.pause();
+            isPlaying = false;
+        } else {
+            backgroundMusic.play().then(() => {
+                isPlaying = true;
+                updateMusicButton();
+            }).catch(() => {
+                // Fallback to generated sound
+                if (window.playFallbackMusic) {
+                    isPlaying = true;
+                    window.playFallbackMusic();
+                    updateMusicButton();
+                }
+            });
+        }
+    } else {
+        // Use fallback sound
+        if (window.playFallbackMusic) {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                window.playFallbackMusic();
+            }
+            updateMusicButton();
+        }
+    }
 }
 
 function updateMusicButton() {
     if (musicToggle) {
         musicToggle.textContent = isPlaying ? '🔊' : '🔇';
         musicToggle.setAttribute('aria-label', isPlaying ? 'Pause background music' : 'Play background music');
+        
+        // Add visual feedback
+        if (isPlaying) {
+            musicToggle.style.animation = 'pulse 2s infinite';
+        } else {
+            musicToggle.style.animation = 'none';
+        }
     }
 }
 
