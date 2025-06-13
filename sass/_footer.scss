@@ -1,128 +1,187 @@
-.flex-container {
+@use './theme/colors';
+@use './theme/fonts';
+@use './theme/fx';
+@use './theme/mixins';
+
+.newspaper-footer {
+    background-color: colors.$ink;
+    color: colors.$white;
+    border-top: 0.5rem double colors.$yellow;
+    padding: 3rem 0 1rem 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer__logo {
     display: flex;
-    align-items: center;
-  }
-  
-  .row {
-    flex-direction: row;
-  }
-  
-  .column {
-    flex-direction: column;
-  }
-  
-  .footer {
-    @extend .flex-container, .column;
     justify-content: center;
-    margin: 0 1rem;
-  
-    &__logo {
-      margin: 3rem;
-      width: 20%;
-      
-      &:hover {
-        width: 35%;
-        filter: brightness(0) contrast(100%)invert(77%) sepia(48%) saturate(711%) hue-rotate(354deg) brightness(104%) contrast(87%);
-      }
+    align-items: flex-start;
+    
+    img {
+        max-width: 8rem;
+        filter: brightness(0) invert(1);
+        transition: all 0.3s ease;
+        
+        &:hover {
+            filter: brightness(0) invert(1) sepia(100%) saturate(1000%) hue-rotate(35deg);
+            transform: scale(1.05);
+        }
     }
-  
-    &__contact, &__owner {
-      flex-grow: 1;
-      flex-basis: 0;
-    }
-  
-    &__contact img, .footer__social img {
-      width: 2.5rem;
-      height: 2.5rem;
-      margin: 0 0.25rem;
-  
-      &:hover {
-        filter: brightness(0) contrast(100%)invert(77%) sepia(48%) saturate(711%) hue-rotate(354deg) brightness(104%) contrast(87%);
-      }
-    }
-  
-    &__owner a:hover, .footer__contact p:hover {
-      opacity: 0.5;
-    }
-  
-    &__social {
-      @extend .flex-container, .row;
-      justify-content: space-between;
-      width: 100%;
-    }
-  
-    &__contact__item__element {
-      margin: 1rem;
-    }
-  
-    & ul li .nav-link-item__footer {
-      color: colors.$white;
-      font-family: fonts.$h;
-      text-decoration: none;
-      font-size: 1.2rem;
-      margin: 1rem;
-  
-      &:hover {
+}
+
+.footer__sections {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.footer__section {
+    h4 {
+        font-family: fonts.$tonic;
+        font-size: 1.1rem;
         color: colors.$yellow;
-      }
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        margin-bottom: 1rem;
+        border-bottom: 0.1rem solid colors.$yellow;
+        padding-bottom: 0.5rem;
     }
-  }
-  
-  .contact-link__footer, .nav-link__footer, .footer-coords {
-    @extend .flex-container, .row;
-  }
-  
-  .contact-link__footer, .footer-coords {
-    justify-content: space-between;
-  }
-  
-  .phone-number__text:before {
-    content: "+x (xxx) xxx xxxx";
-  }
-  
-  .phone-number:hover .phone-number__text:before {
-    content: "+1 (581) 985 0167";
-  }
-  
-  .email__text:before {
-    content: "Nous contacter";
-  }
-  
-  .email:hover .email__text:before {
-    content: "info@anthonylemay.com";
-  }
-  
-  .nav-link__footer {
-    padding-bottom: 1rem;
-    margin-bottom: 1rem;
-    width: 100%;
-  }
-  
-  @media screen and (max-width: 1100px) {
-    .nav-link__footer {
-      flex-wrap: wrap;
-      justify-content: center;
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
-    footer ul li {
-      margin: 1rem 0;
+    
+    li {
+        margin-bottom: 0.5rem;
     }
-    .footer__logo {
-      width: 30%;
+    
+    a {
+        color: colors.$white;
+        text-decoration: none;
+        font-family: fonts.$p;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            color: colors.$yellow;
+            padding-left: 0.5rem;
+        }
     }
-  }
-  
-  @media screen and (max-width: 995px) {
-    .footer-coords {
-      flex-direction: column;
+}
+
+.footer__contact {
+    h4 {
+        font-family: fonts.$tonic;
+        font-size: 1.1rem;
+        color: colors.$yellow;
+        text-transform: uppercase;
+        letter-spacing: 0.05rem;
+        margin-bottom: 1rem;
+        border-bottom: 0.1rem solid colors.$yellow;
+        padding-bottom: 0.5rem;
     }
-    .footer__owner {
-      margin-bottom: 2rem;
+}
+
+.footer__social {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    
+    a {
+        display: block;
+        transition: transform 0.3s ease;
+        
+        &:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
     }
-  }
-  
-  @media screen and (max-width: 600px) {
-    .contact-link__footer {
-      justify-content: space-around;
+    
+    img {
+        width: 2rem;
+        height: 2rem;
+        filter: brightness(0) invert(1);
+        transition: all 0.3s ease;
+        
+        &:hover {
+            filter: brightness(0) invert(1) sepia(100%) saturate(1000%) hue-rotate(35deg);
+        }
     }
-  }
-  
+}
+
+.footer__info {
+    p {
+        font-family: fonts.$p;
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        color: colors.$white;
+    }
+}
+
+.footer__bottom {
+    border-top: 0.1rem solid colors.$grey;
+    padding-top: 1rem;
+    text-align: center;
+    
+    p {
+        font-family: fonts.$p;
+        font-size: 0.8rem;
+        color: colors.$grey;
+        margin: 0.25rem 0;
+        
+        a {
+            color: colors.$yellow;
+            text-decoration: none;
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer__sections {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer__sections {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer__social {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .newspaper-footer {
+        padding: 2rem 0 1rem 0;
+    }
+    
+    .footer-content {
+        gap: 1.5rem;
+    }
+    
+    .footer__section h4,
+    .footer__contact h4 {
+        font-size: 1rem;
+    }
+}

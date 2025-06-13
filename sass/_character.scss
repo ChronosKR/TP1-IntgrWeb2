@@ -1,0 +1,133 @@
+@use './theme/colors';
+@use './theme/fonts';
+@use './theme/fx';
+@use './theme/mixins';
+
+.animated-character-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.character-bubble {
+    background-color: colors.$yellow;
+    border: 0.2rem solid colors.$ink;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    animation: bounce 2s infinite ease-in-out;
+    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 0;
+        border-left: 0.5rem solid transparent;
+        border-right: 0.5rem solid transparent;
+        border-top: 0.5rem solid colors.$yellow;
+    }
+    
+    p {
+        margin: 0;
+        font-family: fonts.$tonic;
+        font-size: 0.9rem;
+        color: colors.$ink;
+        font-weight: fonts.$bold;
+        white-space: nowrap;
+    }
+}
+
+.character-placeholder {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: colors.$sky;
+    border: 0.3rem solid colors.$ink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: shimmy 3s infinite ease-in-out;
+    box-shadow: 0.3rem 0.3rem 0.8rem rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+        transform: scale(1.1);
+        animation-duration: 1s;
+    }
+}
+
+.character-sprite {
+    width: 2.5rem;
+    height: 2.5rem;
+    filter: sepia(20%) saturate(120%) hue-rotate(10deg);
+    animation: wiggle 4s infinite ease-in-out;
+}
+
+// Animations
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-0.5rem);
+    }
+    60% {
+        transform: translateY(-0.2rem);
+    }
+}
+
+@keyframes shimmy {
+    0%, 100% {
+        transform: translateX(0) rotate(0deg);
+    }
+    25% {
+        transform: translateX(0.2rem) rotate(2deg);
+    }
+    50% {
+        transform: translateX(0) rotate(0deg);
+    }
+    75% {
+        transform: translateX(-0.2rem) rotate(-2deg);
+    }
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+}
+
+// Responsive adjustments
+@media screen and (max-width: 768px) {
+    .animated-character-container {
+        bottom: 1rem;
+        right: 1rem;
+        scale: 0.8;
+    }
+    
+    .character-bubble {
+        display: none; // Hide speech bubble on mobile for space
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .animated-character-container {
+        scale: 0.7;
+    }
+}

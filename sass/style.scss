@@ -3,13 +3,15 @@
 @use 'theme/fonts';
 @use 'theme/fx';
 @use 'theme/mixins';
+@use 'masthead';
+@use 'character';
+@use 'newspaper';
 @use 'carousel';
 @use 'people';
 @use 'newsletter';
 @use 'features';
 @use 'gallery';
 @use 'chart';
-@use 'header';
 @use 'mapform';
 @use 'footer';
 
@@ -24,6 +26,7 @@
 .container{
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 1rem;
 }
 
 .wavy-bg__img{
@@ -37,9 +40,11 @@
   bottom:0;
 }
 
-
 body{
-    background-color:colors.$white;
+    background-color: colors.$paper;
+    font-family: fonts.$p;
+    line-height: 1.6;
+    color: colors.$ink;
 }
 
 li{
@@ -51,10 +56,10 @@ a{
 }
 
 a:focus, button:focus, input:focus, textarea:focus, img:focus, li:focus{
-  outline-color:colors.$white;
-  outline-width: 1rem;
-  border: 2rem solid colors.$sky;
-  opacity: 0.9;
+  outline-color: colors.$yellow;
+  outline-width: 0.2rem;
+  outline-style: solid;
+  outline-offset: 0.2rem;
 } 
 
 .screen-reader-text {
@@ -70,33 +75,91 @@ a:focus, button:focus, input:focus, textarea:focus, img:focus, li:focus{
     word-wrap: normal !important;
   }
   
- 
-
-  .btn{
-    padding: 0.25rem 1rem 0.6rem 1rem;
-    margin: 0 1rem;
+.btn{
+    padding: 0.5rem 1.5rem;
+    margin: 0.5rem;
     font-family: fonts.$tonic;
-    font-size: fonts.$font-size--max;
+    font-size: 1.1rem;
+    font-weight: fonts.$bold;
     color: colors.$white;
-    background-color: colors.$black;
-    border: 0 solid;
-    border-radius:0.25rem;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    background-color: colors.$ink;
+    border: 0.2rem solid colors.$ink;
+    border-radius: 0.3rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    
     &:hover{
-      color: colors.$pure-black;
-      background-color: colors.$white;
+      color: colors.$ink;
+      background-color: colors.$yellow;
+      border-color: colors.$ink;
+      transform: translateY(-0.1rem);
+      box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+    }
+    
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
     }
 }
 
 .confirm-img{
-  margin:6rem 0 6rem 0;
-  min-width:30%;
-  max-width:50%;
+  margin: 2rem 0;
+  min-width: 30%;
+  max-width: 50%;
+  border-radius: 0.5rem;
+  border: 0.2rem solid colors.$ink;
 }
 
 .netflix{
   color: colors.$red;
   font-family: fonts.$netflix;
+  font-weight: fonts.$bold;
+}
+
+// Utility classes for newspaper styling
+.text-center {
+    text-align: center;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.border-vintage {
+    border: 0.2rem solid colors.$ink;
+    border-radius: 0.5rem;
+}
+
+.shadow-newspaper {
+    box-shadow: 0.3rem 0.3rem 0.8rem rgba(0, 0, 0, 0.1);
+}
+
+// Typography enhancements for newspaper feel
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+    hyphens: auto;
+}
+
+// Responsive typography
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        font-size: 1rem;
+        padding: 0.4rem 1.2rem;
+    }
 }

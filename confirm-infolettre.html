@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explorez le monde charmant et exigeant de Cuphead, un jeu d'action en 2D dessiné à la main inspiré des dessins animés des années 1930.">
-    <title>Le jeu Cuphead</title>
+    <meta name="description" content="The Daily Shimmy & Shake Gazette - Confirmation d'abonnement">
+    <title>Abonnement Confirmé - The Daily Shimmy & Shake Gazette</title>
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./style/css/style.css">
@@ -15,45 +15,46 @@
 </head>
 
 <body>
-    <a class="screen-reader-text" href="#content" tabindex="1">Aller au contenu principal</a>
-    <header class="header">
-        <nav id="menu" class="header__menu container">
-            <div class="nav__logo nav__logo--shadow">
-                <h1><a id="logo" href="index.html"><img src="./img/logo.svg" alt="logo du jeu Cuphead"></a></h1>
+<a class="screen-reader-text" href="#content" tabindex="1">Aller au contenu principal</a>
+
+<!-- Newspaper Masthead -->
+<header class="masthead">
+    <div class="masthead__container container">
+        <div class="masthead__top">
+            <div class="masthead__date">Vol. 1 • No. 1 • Édition Spéciale</div>
+            <div class="masthead__weather">☀️ Ensoleillé • 22°C</div>
+        </div>
+        
+        <div class="masthead__title">
+            <h1>THE DAILY SHIMMY & SHAKE GAZETTE</h1>
+            <div class="masthead__subtitle">Animated Rubber Hose Nostalgia • Depuis 1930</div>
+        </div>
+        
+        <nav id="menu" class="masthead__nav">
+            <div class="nav__logo">
+                <a id="logo" href="index.html"><img src="./img/logo.svg" alt="logo du journal"></a>
             </div>
             <div class="nav" role="navigation" aria-label="Menu des pages du site web">
-                <a id="logo-burger" class="nav__logo--burger" href="index.html"><img src="./img/logo.svg" alt="logo du jeu Cuphead"></a>
+                <a id="logo-burger" class="nav__logo--burger" href="index.html"><img src="./img/logo.svg" alt="logo du journal"></a>
                 <ul class="nav__list" role=tablist>
-                    <li class="nav__item nav--active" role="tab">
-                        <a href="index.html" class="" id="accueil-tab" role="tab" aria-selected="true">
-                            <img src="img/nav-1.svg" alt="Icône personnage Cuphead">Accueil
-                        </a>
-                        <a id="arrow__accueil" href="index.html" role="tab">
-                            <img class="list__item__arrow" src="img/arrow-down.svg" alt="Afficher le sous-menu pour Accueil">
+                    <li class="nav__item" role="tab">
+                        <a href="index.html" class="nav__link" id="accueil-tab" role="tab" aria-selected="false">
+                            <img src="img/nav-1.svg" alt="Icône personnage Cuphead">Actualités
                         </a>
                     </li>
                     <li class="nav__item" role="tab">
                         <a href="index.html" class="nav__link" id="a-propos" role="tab" aria-selected="false">
-                            <img src="img/nav-2.svg" alt="Icône personnage Mugman">À propos
-                        </a>
-                        <a id="arrow__apropos" href="index.html">
-                            <img class="list__item__arrow" src="img/arrow-down.svg" alt="Afficher le sous-menu pour À propos">
+                            <img src="img/nav-2.svg" alt="Icône personnage Mugman">Chroniques
                         </a>
                     </li>
                     <li class="nav__item" role="tab">
                         <a href="index.html" class="nav__link" id="dlc" role="tab" aria-selected="false">
-                            <img src="img/nav-3.svg" alt="Icône personnage Ms. Chalice">DLC
-                        </a>
-                        <a id="arrow__dlc" href="index.html">
-                            <img class="list__item__arrow" src="img/arrow-down.svg" alt="Afficher le sous-menu pour DLC">
+                            <img src="img/nav-3.svg" alt="Icône personnage Ms. Chalice">Divertissement
                         </a>
                     </li>
                     <li class="nav__item" role="tab">
                         <a href="index.html" class="nav__link" id="studio-MDHR" role="tab" aria-selected="false">
-                            <img src="img/nav-4.svg" alt="Icône personnage Diable">Studio MDHR
-                        </a>
-                        <a id="arrow__studio-mdhr" href="index.html">
-                            <img class="list__item__arrow" src="img/arrow-down.svg" alt="Afficher le sous-menu pour Studio MDHR">
+                            <img src="img/nav-4.svg" alt="Icône personnage Diable">Rédaction
                         </a>
                     </li>
                 </ul>
@@ -64,64 +65,80 @@
                 <span class="nav__burger__bar"></span>
             </div>
         </nav>
-    </header>         
-
-<main id="content">
-<section>
-    <h2 class="screen-reader-text">Confirmation d'inscription à l'info-lettre</h2>
-    <div class="wavy-bg__img">
-        <div class="newsletter container">
-        <h1>Vous êtes inscrits à l'info-lettre!</h1>
-        <p>Vous receverez un lien sous peu vers votre «skin pack» <span class="netflix">Netflix</a></span> gratuit avec les instructions pour l'activer.</p>
-        <a class="btn" href="index.html">Retour à l'accueil</a>
-        <img class="confirm-img" src="img/netflix.svg" alt="cuphead et mugman en habits de prison de la série netflix">
-        </div>
     </div>
-</section>
-</main>
+</header>
 
-<footer>
-    <div class="container footer-flex">
-        <div class="logo__footer">
-        <a href="index.html"><img src="./img/logo-footer.svg" alt="logo du jeu Cuphead"></a>
+<!-- Newspaper Content Wrapper -->
+<div class="newspaper-content-wrapper">
+    <main id="content" class="newspaper-main">
+        <div class="container">
+            <article class="newspaper-article newspaper-article--confirmation">
+                <header class="article-header">
+                    <h1 class="article-title">BIENVENUE CHEZ LES ABONNÉS!</h1>
+                    <div class="article-byline">Confirmation d'abonnement • Aujourd'hui</div>
+                </header>
+                
+                <div class="confirmation-content">
+                    <div class="confirmation-text">
+                        <h2>Félicitations!</h2>
+                        <p>Vous êtes maintenant abonné(e) à The Daily Shimmy & Shake Gazette!</p>
+                        <p>Vous recevrez sous peu un lien vers votre cadeau exclusif <span class="netflix">Netflix</span> avec les instructions pour l'activer.</p>
+                        <a class="btn" href="index.html">Retour à la Gazette</a>
+                    </div>
+                    <div class="confirmation-image">
+                        <img class="confirm-img" src="img/netflix.svg" alt="Cadeau exclusif Netflix">
+                    </div>
+                </div>
+            </article>
         </div>
-        <div>
-            <ul class="nav-link__footer" role="tablist">
-                <li id="apropos-footer" role="tab"><a class="nav-link-item__footer" id="apropos-footer-tab" href="index.html">À propos de nous</a></li>
-                <li id="art-footer" role="tab"><a class="nav-link-item__footer" id="art-footer-tab" href="index.html">Origines artistiques</a></li>
-                <li id="consoles-footer" role="tab"><a class="nav-link-item__footer" id="consoles-footer-tab" href="index.html">Consoles</a></li>
-                <li id="careers-footer" role="tab"><a class="nav-link-item__footer" id="careers-footer-tab" href="index.html">Carrières</a></li>
-                <li id="faqs-footer" role="tab"><a class="nav-link-item__footer" id="faqs-footer-tab" href="index.html">Faqs</a></li>
-                <li id="privacy-footer" role="tab"><a class="nav-link-item__footer" id="privacy-footer-tab" href="index.html">Politiques de confidentialité</a></li>
-            </ul>
-        </div>
-        
-        <div class="footer-coords">
-            <div class="owner__footer">
-                <a href="https://anthonylemay.com" target="_blank">Fait par: Anthony Lemay</a>
-            </div>
-            <div>
-                <ul class="social__footer" role=tablist>
-                    <li  role="tab"><a href="https://www.facebook.com/gaming/cuphead" target="_blank"><img src="img/fb.svg" alt="icône de Facebook"></a></li>
-                    <li role="tab"><a href="https://twitter.com/studiomdhr" target="_blank"><img src="img/tw.svg" alt="icône de twitter"></a></li>
-                    <li role="tab"><a href="https://www.linkedin.com/company/studiomdhr/" target="_blank"><img src="img/in.svg" alt="icône de Linkedin"></a></li>
-                    <l role="tab"><a href="https://www.instagram.com/cupheadshow/" target="_blank"><img src="img/ig.svg" alt="icône d'Instagram"></a></l>
-                </ul>
-            </div>
-            <div class="contact__footer">
-                <div class="contact-link__footer">
-                    <a class="screen-reader-text" href="tel:15819850167" target="_blank" aria-label="Lien pour appeller directement le studio">Lien vers le numéro de téléphone au +1 581 985 0167</a>
-                    <a class="contact__footer__item__element" href="tel:15819850167" target="_blank"><img src="img/phone.svg" alt="icône de lettre cliquable signifiant un téléphone"></a>
-                    <a href="tel:15819850167" class="phone-number" target="_blank" aria-label="Lien pour appeller directement le studio"><p class="phone-number__text"></p></a>
-                    <a class="screen-reader-text" href="mailto:info@anthonylemay.com" target="_blank">Lien vers l'adresse courriel de info@anthonylemay.com'</a>
-                    <a class="contact__footer__item__element" href="mailto:info@anthonylemay.com" target="_blank"><img src="img/mail.svg" alt="icône de lettre cliquable signifiant un email"></a>
-                    <a href="mailto:info@anthonylemay.com" class="email" target="_blank" aria-label="Lien pour écrire un courriel directement au studio"><p class="email__text"></p></a>
+    </main>
+
+    <!-- Newspaper Footer -->
+    <footer class="newspaper-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer__logo">
+                    <a href="index.html"><img src="./img/logo-footer.svg" alt="Logo de la gazette"></a>
+                </div>
+                
+                <div class="footer__sections">
+                    <div class="footer__section">
+                        <h4>Rubriques</h4>
+                        <ul>
+                            <li><a href="index.html">Actualités</a></li>
+                            <li><a href="index.html">Chroniques</a></li>
+                            <li><a href="index.html">Divertissement</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer__section">
+                        <h4>La Rédaction</h4>
+                        <ul>
+                            <li><a href="index.html">À propos</a></li>
+                            <li><a href="index.html">Équipe</a></li>
+                            <li><a href="index.html">Carrières</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer__contact">
+                    <h4>Nous Suivre</h4>
+                    <div class="footer__social">
+                        <a href="#" target="_blank"><img src="img/fb.svg" alt="Facebook"></a>
+                        <a href="#" target="_blank"><img src="img/tw.svg" alt="Twitter"></a>
+                        <a href="#" target="_blank"><img src="img/in.svg" alt="LinkedIn"></a>
+                        <a href="#" target="_blank"><img src="img/ig.svg" alt="Instagram"></a>
+                    </div>
                 </div>
             </div>
-
+            
+            <div class="footer__bottom">
+                <p>&copy; 2024 The Daily Shimmy & Shake Gazette • Tous droits réservés</p>
+                <p>Créé par <a href="https://anthonylemay.com" target="_blank">Anthony Lemay</a></p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
+</div>
 
 </body>
 </html>
