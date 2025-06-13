@@ -3,9 +3,9 @@
 @use './theme/fx';
 @use './theme/mixins';
 
-// Fixed position ads that stay in place
+// Absolutely positioned ads that stay in place relative to body
 .filler-ads {
-    position: fixed;
+    position: absolute;
     top: 0;
     width: 12rem;
     height: 100vh;
@@ -175,6 +175,11 @@
         font-weight: fonts.$ultra;
         text-transform: uppercase;
     }
+}
+
+// Ensure body has relative positioning to establish positioning context
+body {
+    position: relative;
 }
 
 // Show ads only on very wide screens (1920px qualifies)
